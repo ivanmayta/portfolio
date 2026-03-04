@@ -46,8 +46,9 @@ export default async function RootLayout({
                 <Footer />
                 <img
                     src="/logo.svg"
-                    alt="iverse.dev"
-                    className="absolute top-0 left-0 w-screen h-screen opacity-25 -z-50 brightness-10"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute top-0 left-0 w-screen h-screen opacity-25 -z-50 brightness-10 pointer-events-none"
                 />
             </body>
         </html>

@@ -46,7 +46,7 @@ export function Network() {
 
     return (
         <section
-            id="projects"
+            id="connect"
             className="group/network  flex flex-col py-4 gap-4"
         >
             <div className={`${mplus1code.className} flex items-center`}>
