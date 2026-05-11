@@ -17,6 +17,7 @@ import {
     Redux,
     Vite,
     Clerk,
+    Meta,
 } from "@/icons/stacks"
 
 import { DownloadCloud, Building2, HandCoins, ChartBarBig } from "lucide-react"
@@ -114,5 +115,9 @@ export const TAGS = {
     VITE: {
         name: "Vite",
         icon: Vite,
+    },
+    META: {
+        name: "Meta API",
+        icon: Meta,
     },
 }
