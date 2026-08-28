@@ -22,12 +22,15 @@ type Highlight = {
 export type Lesson = {
     slug: string
     title: string
+    /** Course videos this post is written from — the scope it may cover. */
+    videos: string[]
 }
 
 export type Topic = {
     id: string
     name: string
-    summary: string
+    /** Written once the topic has been worked through. */
+    summary?: string
     lessons: Lesson[]
 }
 

@@ -107,9 +107,11 @@ export default async function CoursePage({
                             <h3 className="text-lg font-medium tracking-[-0.01em]">
                                 {topic.name}
                             </h3>
-                            <p className="mt-2 max-w-[520px] text-[14.5px] leading-[1.6] text-subtle text-pretty">
-                                {topic.summary}
-                            </p>
+                            {topic.summary && (
+                                <p className="mt-2 max-w-[520px] text-[14.5px] leading-[1.6] text-subtle text-pretty">
+                                    {topic.summary}
+                                </p>
+                            )}
                             <ul className="mt-4">
                                 {topic.lessons.map((lesson) => {
                                     const live = isPublished(course.slug, lesson.slug)
