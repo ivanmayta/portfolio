@@ -1,0 +1,55 @@
+export const meta = {
+    title: "Wrapping up",
+    summary:
+        "What you actually built, why CORS exists, and the honest answer to \"what next\" — every one of these topics is somebody's entire career.",
+    date: "2026-08-28",
+    minutes: 3,
+}
+
+Start to finish, by hand: a domain, a rented server, a hardened user, keys
+instead of passwords, a firewall, nginx in front of Node, a real TLS
+certificate, a WebSocket, a database, a fake deployment pipeline, and containers
+behind a load balancer.
+
+Nothing in that list was magic. That was the point.
+
+## Three questions worth keeping
+
+**Why does CORS exist?** You import a utility file from your own domain, fine.
+Import one from somewhere else and the browser blocks it by default — a
+**cross-origin request**. You don't control that origin, so a malicious actor
+could swap what it serves. CORS is you saying explicitly *this origin, and
+nothing else*. It's the same instinct as SSH keys and file permissions: the
+system making it hard to shoot yourself in the foot.
+
+**Is `nvm` fine on the server?** Yes. The course installed Node globally because
+fewer moving parts means fewer things to go wrong on camera, not because `nvm`
+is wrong.
+
+**Can you build the image locally and pull it down?** Yes — **Docker Hub**, the
+GitHub of images. Push yours, pull it anywhere.
+
+## Where to actually go
+
+Every single topic here is a course, and several are careers. The honest map:
+
+- **The command line and Vim** — you learned enough to survive; there are four
+  hours of Vim alone.
+- **Linux** — the OS section was one video deep.
+- **Databases** — you wrote one `CREATE TABLE`. Joins alone are a subject.
+- **Containers and Kubernetes** — orchestration was ten minutes of a two-day
+  course.
+- **AWS** — you used DigitalOcean specifically because AWS is a wall.
+- **Security** — Jem spent more time here than anywhere and still called it not
+  enough.
+
+<Callout label="The thing worth carrying">
+None of this is any one person's invention. Unix, TCP/IP, DNS, HTTP, SSH — a
+collection of people and organisations agreeing on standards nobody forced them
+to adopt, and it works well enough that we forget it's there. Jem's actual
+argument, made repeatedly across two days, is that the internet is the largest
+piece of voluntary cooperation humans have built.
+</Callout>
+
+You are, as he puts it, now just enough to be dangerous. That's further than it
+sounds.

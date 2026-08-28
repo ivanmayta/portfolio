@@ -253,17 +253,14 @@ export const courses: Course[] = [
             },
             {
                 id: "containers",
+                summary:
+                    "Slicing the application rather than the machine, and spreading traffic across the pieces.",
                 name: "Containers",
                 lessons: [
                     {
-                        slug: "containers",
-                        title: "Containers",
-                        videos: ["Containers"],
-                    },
-                    {
-                        slug: "creating-a-docker-container",
-                        title: "Creating a Docker container",
-                        videos: ["Creating a Docker Container"],
+                        slug: "containers-and-docker",
+                        title: "Containers, and Docker",
+                        videos: ["Containers", "Creating a Docker Container"],
                     },
                     {
                         slug: "orchestration-and-load-balancing",

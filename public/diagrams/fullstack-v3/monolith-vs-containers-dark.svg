@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 264" role="img" aria-labelledby="monolith-vs-containers-dark-title monolith-vs-containers-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="monolith-vs-containers-dark-title">A monolith against containers</title>
+  <desc id="monolith-vs-containers-dark-desc">One server running nginx, node and a database together must restart as a unit. The same pieces in separate containers can be updated and replaced one at a time without taking the site down.</desc>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <text x="16" y="52" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">ONE SERVER, ONE BLOCK</text>
+  <rect x="16" y="64" width="288" height="152" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="36" y="84" width="248" height="32" rx="4" fill="#0c0c0e" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="52" y="105" fill="#a1a1aa" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">nginx</text>
+  <rect x="36" y="128" width="248" height="32" rx="4" fill="#0c0c0e" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="52" y="149" fill="#a1a1aa" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">node</text>
+  <rect x="36" y="172" width="248" height="32" rx="4" fill="#0c0c0e" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="52" y="193" fill="#a1a1aa" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">sqlite</text>
+  <text x="16" y="240" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Restart one thing, everything blinks.</text>
+  <text x="336" y="52" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">ONE CONTAINER EACH</text>
+  <rect x="336" y="64" width="288" height="44" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="356" y="91" fill="#ededed" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">nginx</text>
+  <text x="604" y="91" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">its own OS layer</text>
+  <rect x="336" y="116" width="288" height="44" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="356" y="143" fill="#ededed" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">node</text>
+  <text x="604" y="143" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">its own OS layer</text>
+  <rect x="336" y="168" width="288" height="44" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="356" y="195" fill="#ededed" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">sqlite</text>
+  <text x="604" y="195" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">its own OS layer</text>
+  <text x="336" y="240" fill="#ededed" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Update half, switch traffic, zero downtime.</text>
+</svg>
