@@ -20,17 +20,14 @@ export const courses: Course[] = [
         topics: [
             {
                 id: "introduction",
+                summary:
+                    "The honest definition, and what is actually in a stack.",
                 name: "Introduction",
                 lessons: [
                     {
-                        slug: "introduction",
-                        title: "Introduction",
-                        videos: ["Introduction"],
-                    },
-                    {
-                        slug: "what-is-a-full-stack-engineer",
-                        title: "What is a full stack engineer",
-                        videos: ["What is a Full Stack Engineer"],
+                        slug: "what-full-stack-actually-means",
+                        title: "What full stack actually means",
+                        videos: ["Introduction", "What is a Full Stack Engineer"],
                     },
                 ],
             },
