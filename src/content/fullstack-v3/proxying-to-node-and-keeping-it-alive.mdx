@@ -1,0 +1,113 @@
+export const meta = {
+    title: "Proxying to Node, and keeping it alive",
+    summary:
+        "A virtual server block hands every request to Node on port 3000. Then pm2 keeps the process running after you close the shell — because `node app.js` dies with your terminal.",
+    date: "2026-08-28",
+    minutes: 6,
+}
+
+## Get a current Node
+
+`apt install nodejs` gives you something ancient. Pull the real source first:
+
+```bash
+curl https://deb.nodesource.com/setup_19.x | sudo -E bash -
+sudo apt-get install nodejs
+node --version
+```
+
+<Callout label="apt or apt-get?">
+`apt-get` is the lower-level tool; `apt` is the friendlier one. They do the same
+job. Prefer `apt` generally — this is one of the places the script wants
+`apt-get`.
+</Callout>
+
+## Stop needing sudo for your own files
+
+`/var/www` isn't yours, which is why the earlier vi trap happened. Take it:
+
+```bash
+sudo chown -R $USER:$USER /var/www    # change owner, recursively
+mkdir /var/www/app && cd /var/www/app
+git init
+npm init
+touch app.js
+```
+
+## The application
+
+This time write straight to the response instead of reading a file:
+
+```js
+const http = require("http")
+
+http.createServer(function (req, res) {
+    res.write("On the way to being a full stack engineer")
+    res.end()
+}).listen(3000)
+
+console.log("server started")
+```
+
+`res.end()` isn't optional. Without it the server never signals that the
+response is finished, so nothing is sent.
+
+## The virtual server
+
+nginx can host any number of **virtual servers** on one machine. Rather than
+editing the default config, make your own:
+
+```bash
+sudo vi /etc/nginx/sites-enabled/fsfe
+```
+
+<Figure
+  src="/diagrams/fullstack-v3/nginx-server-block"
+  alt="An nginx server block listening on port 80, naming a domain, with a location block proxying to 127.0.0.1 port 3000."
+  caption="Add `listen [::]:80 default_server;` too, so IPv6 requests land here as well."
+/>
+
+`server_name` doesn't matter while this is the catch-all, but it will the moment
+you add subdomains — that's what nginx matches the incoming request against.
+
+Then point nginx at only this file: edit `/etc/nginx/nginx.conf` and remove the
+line including `sites-enabled/default`, so you're not fighting the default
+config later.
+
+```bash
+sudo nginx -t                 # validate before you break anything
+sudo service nginx restart
+```
+
+`nginx -t` checks every config file without applying it. Run it every time. It
+needs `sudo` because it touches the log files.
+
+## Keep it running
+
+Start the app and it works. Close your terminal and the site goes down — the
+shell exits and takes the process with it.
+
+<Figure
+  src="/diagrams/fullstack-v3/pm2"
+  alt="Two panels comparing node app.js, which dies when the shell closes, reboots or crashes, against pm2, which survives all three."
+  caption="pm2 also restarts a crashed app — which is why you should watch its logs."
+/>
+
+```bash
+sudo npm i -g pm2
+pm2 start app.js --watch
+pm2 list
+pm2 save                      # remember the current process list
+pm2 startup                   # prints a command — run it, it registers with systemd
+```
+
+<Callout label="The cost of a process manager">
+pm2 restarts a crashing app forever, silently. A server that falls over every
+few minutes looks identical to one that's healthy, unless you're reading the
+logs or piping them somewhere you'll actually see. Convenience that hides the
+problem is the danger of process managers generally.
+</Callout>
+
+That's the whole chain: a domain, a server you hardened yourself, nginx in
+front, Node behind it, kept alive across reboots. From here it's `npm install`
+and territory you already know.

@@ -151,21 +151,18 @@ export const courses: Course[] = [
             {
                 id: "application-setup",
                 name: "Application Setup",
+                summary:
+                    "Putting a web server in front of your application, and keeping the application running once you close the laptop.",
                 lessons: [
                     {
-                        slug: "setting-up-nginx",
-                        title: "Setting up nginx",
+                        slug: "nginx-and-why-it-sits-in-front",
+                        title: "nginx, and why it sits in front",
                         videos: ["Setup Nginx Web Server"],
                     },
                     {
-                        slug: "proxy-pass",
-                        title: "Proxy pass",
-                        videos: ["Setup Proxy Pass"],
-                    },
-                    {
-                        slug: "virtual-server-and-pm2",
-                        title: "Virtual server and PM2",
-                        videos: ["Virtual Server & PM2"],
+                        slug: "proxying-to-node-and-keeping-it-alive",
+                        title: "Proxying to Node, and keeping it alive",
+                        videos: ["Setup Proxy Pass", "Virtual Server & PM2"],
                     },
                 ],
             },

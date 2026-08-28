@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 288" role="img" aria-labelledby="nginx-server-block-title nginx-server-block-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="nginx-server-block-title">An nginx server block</title>
+  <desc id="nginx-server-block-desc">A minimal nginx virtual server: it listens on port 80 as the catch-all, names the domain it answers for, and its location block proxies every request to a Node process on port 3000.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <text x="24" y="44" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em">/etc/nginx/sites-enabled/fsfe</text>
+  <text x="24" y="72" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">server {</text>
+  <text x="44" y="94" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">listen 80 default_server;</text>
+  <path d="M 348 90 L 380 90" stroke="#52525b" stroke-width="1"/>
+  <text x="388" y="94" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">which port, and catch-all</text>
+  <text x="44" y="116" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">root /var/www/html;</text>
+  <text x="44" y="138" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">server_name jemstack.lol;</text>
+  <path d="M 348 134 L 380 134" stroke="#52525b" stroke-width="1"/>
+  <text x="388" y="138" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">which domain matches</text>
+  <text x="44" y="160" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">location / {</text>
+  <text x="64" y="182" fill="#9d4cfa" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">proxy_pass http://127.0.0.1:3000;</text>
+  <path d="M 348 178 L 380 178" stroke="#9d4cfa" stroke-width="1"/>
+  <text x="388" y="182" fill="#9d4cfa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">everything goes to Node</text>
+  <text x="44" y="204" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">}</text>
+  <text x="24" y="226" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">}</text>
+  <text x="24" y="266" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">A virtual server. You can run as many as you like on one machine.</text>
+</svg>
