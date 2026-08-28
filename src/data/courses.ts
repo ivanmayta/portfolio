@@ -207,34 +207,19 @@ export const courses: Course[] = [
                 name: "Continuous Integration & Deployment",
                 lessons: [
                     {
-                        slug: "continuous-integration-and-deployment",
-                        title: "Continuous integration and deployment",
-                        videos: ["Continuous Integration & Deployment"],
+                        slug: "a-fake-ci-cd-pipeline-with-cron",
+                        title: "A fake CI/CD pipeline with cron",
+                        videos: ["Continuous Integration & Deployment", "Cron for CI"],
                     },
                     {
-                        slug: "cron-for-ci",
-                        title: "Cron for CI",
-                        videos: ["Cron for CI"],
+                        slug: "reading-logs-and-why-commands-compose",
+                        title: "Reading logs, and why commands compose",
+                        videos: ["Logging, Streams, & Redirection", "find & grep"],
                     },
                     {
-                        slug: "logging-streams-and-redirection",
-                        title: "Logging, streams and redirection",
-                        videos: ["Logging, Streams, & Redirection"],
-                    },
-                    {
-                        slug: "find-and-grep",
-                        title: "find and grep",
-                        videos: ["find & grep"],
-                    },
-                    {
-                        slug: "nginx-redirection-and-gzip",
-                        title: "Nginx redirection and gzip",
-                        videos: ["Nginx Redirection & Gzip"],
-                    },
-                    {
-                        slug: "subdomains",
-                        title: "Subdomains",
-                        videos: ["Subdomains"],
+                        slug: "redirects-gzip-and-subdomains",
+                        title: "Redirects, gzip and subdomains",
+                        videos: ["Nginx Redirection & Gzip", "Subdomains"],
                     },
                 ],
             },

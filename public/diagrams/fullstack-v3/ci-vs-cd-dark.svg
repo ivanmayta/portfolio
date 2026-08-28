@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 288" role="img" aria-labelledby="ci-vs-cd-dark-title ci-vs-cd-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="ci-vs-cd-dark-title">Delivery against deployment</title>
+  <desc id="ci-vs-cd-dark-desc">Commit, build and test make up continuous integration. Whether the step into production waits for a person is the only thing separating continuous delivery from continuous deployment.</desc>
+  <defs><marker id="ci-vs-cd-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <path d="M 140 100 L 156 100" stroke="#a1a1aa" stroke-width="1" marker-end="url(#ci-vs-cd-dark-a)"/>
+  <path d="M 288 100 L 304 100" stroke="#a1a1aa" stroke-width="1" marker-end="url(#ci-vs-cd-dark-a)"/>
+  <path d="M 436 100 L 464 100" stroke="#a1a1aa" stroke-width="1"/>
+  <path d="M 480 100 L 500 100" stroke="#a1a1aa" stroke-width="1" marker-end="url(#ci-vs-cd-dark-a)"/>
+  <path d="M 472 64 L 472 140" stroke="#9d4cfa" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="472" y="56" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">a person?</text>
+  <rect x="16" y="72" width="124" height="56" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="78" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">commit</text>
+  <text x="78" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">small, often</text>
+  <rect x="164" y="72" width="124" height="56" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="226" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">build</text>
+  <text x="226" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle"></text>
+  <rect x="312" y="72" width="124" height="56" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="374" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">test</text>
+  <text x="374" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">the whole point</text>
+  <rect x="508" y="72" width="116" height="56" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="566" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">production</text>
+  <text x="566" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle"></text>
+  <path d="M 16 156 L 16 164 L 436 164 L 436 156" fill="none" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="226" y="182" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">CONTINUOUS INTEGRATION</text>
+  <text x="16" y="216" fill="#a1a1aa" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">continuous <tspan font-weight="600">delivery</tspan>  —  the gate is a person</text>
+  <text x="16" y="238" fill="#ededed" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">continuous <tspan font-weight="600">deployment</tspan>  —  there is no gate</text>
+  <text x="16" y="272" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Neither means anything without the test step.</text>
+</svg>

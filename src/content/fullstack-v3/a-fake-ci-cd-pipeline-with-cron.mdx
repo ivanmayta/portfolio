@@ -1,0 +1,101 @@
+export const meta = {
+    title: "A fake CI/CD pipeline with cron",
+    summary:
+        "Continuous integration is small merges and constant testing. Delivery and deployment differ by one thing: whether a person presses the button. And a two-line shell script plus cron makes a pipeline you shouldn't ship.",
+    date: "2026-08-28",
+    minutes: 6,
+}
+
+CI/CD looks like someone else's problem until you have more than one developer.
+One person on one server doesn't need it. A hundred people shipping features
+simultaneously do — otherwise it's everyone pushing whatever, one enormous merge
+on Friday, and hope.
+
+## Three terms, one real distinction
+
+<Figure
+  src="/diagrams/fullstack-v3/ci-vs-cd"
+  alt="Commit, build and test bracketed as continuous integration, then a dashed gate before production marked with the question of whether a person is involved."
+  caption="Delivery and deployment sound like synonyms. The gate is the entire difference."
+/>
+
+**Continuous integration** is merging validated changes back to main as often as
+possible. Small atomic commits, not a branch you've held open for two weeks with
+fifty thousand lines in it. If you've never had to `git bisect` a production
+system, that's the thing CI is protecting you from.
+
+**Continuous delivery** means changes are tested and *ready* to ship. **Continuous
+deployment** means they actually ship. Same pipeline; the difference is whether a
+human approves the last step — and that's a business decision. Healthcare
+software wants a person there. A marketing site doesn't.
+
+<Callout label="The part people drop">
+Both rest on **testing**. CI/CD gets sold as shipping faster, and that isn't it —
+it's validating code so that shipping stops being a question. Jem's line: people
+get the build and the deploy and forget that testing was the point.
+</Callout>
+
+Real setups use real tooling — Netflix runs on Spinnaker, which can stand up 500
+correctly-configured, load-balanced clusters from a button. That is a Ferrari
+for mowing a lawn this size.
+
+## All you actually need is a stopwatch
+
+**cron** runs a thing on an interval. That's it. Point it at a script that pulls
+from GitHub and you have a pipeline — a bad one, with no tests, which is why
+Jem calls it fake CI/CD and says plainly not to ship it.
+
+### The script
+
+```bash
+which bash                      # find the interpreter first
+vi github.sh
+```
+
+```bash
+#!/usr/bin/bash
+cd /var/www/app
+git pull --ff-only origin main
+```
+
+```bash
+chmod 700 github.sh             # nothing is executable by default
+```
+
+Two lines of substance. `#!` — the hashbang — names the interpreter. `--ff-only`
+takes changes that fast-forward cleanly and refuses anything that would need a
+rebase, which is what you want from a script running unattended.
+
+<Callout label="The line everyone forgets">
+`cd /var/www/app` is not decoration. **cron does not run from your directory** —
+it runs from somewhere else entirely, so a script that works when you run it by
+hand silently does nothing on a schedule. Jem forgets this line on camera, every
+time.
+</Callout>
+
+### The schedule
+
+<Figure
+  src="/diagrams/fullstack-v3/cron-fields"
+  alt="Five asterisks labelled minute, hour, day of month, month and weekday, followed by the command."
+  caption="`*/2` means every second one. A bare `2` means only at 2."
+/>
+
+```bash
+crontab -e
+```
+
+```
+*/2 * * * * sh /var/www/app/github.sh 2>&1 | logger -t github.sh
+```
+
+That tail matters. **Without it the output goes nowhere** — the job runs, and
+you can't tell. `2>&1` merges standard error into standard out, `logger` writes
+it to syslog, and `-t` tags the entries so you can find them.
+
+```bash
+sudo tail -f /var/log/syslog
+```
+
+Now pushing to GitHub from your laptop lands on the server within two minutes,
+and you never open an editor over SSH again.

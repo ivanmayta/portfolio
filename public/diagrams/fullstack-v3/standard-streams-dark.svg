@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 280" role="img" aria-labelledby="standard-streams-dark-title standard-streams-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="standard-streams-dark-title">Why every command composes</title>
+  <desc id="standard-streams-dark-desc">Every POSIX command has the same three connections: standard in, standard out and standard error. A pipe joins one command's standard out to the next one's standard in, which is why any two commands can be chained.</desc>
+  <defs><marker id="standard-streams-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker>
+  <marker id="standard-streams-dark-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9d4cfa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <path d="M 16 108 L 60 108" stroke="#a1a1aa" stroke-width="1" marker-end="url(#standard-streams-dark-a)"/>
+  <text x="16" y="96" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">stdin</text>
+  <path d="M 224 108 L 380 108" stroke="#9d4cfa" stroke-width="1" marker-end="url(#standard-streams-dark-b)"/>
+  <rect x="252" y="84" width="104" height="14" rx="2" fill="#0c0c0e"/>
+  <text x="304" y="95" fill="#9d4cfa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">| the pipe</text>
+  <path d="M 144 148 L 144 196" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#standard-streams-dark-a)"/>
+  <text x="156" y="180" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">stderr — separate on purpose</text>
+  <path d="M 544 108 L 612 108" stroke="#a1a1aa" stroke-width="1" marker-end="url(#standard-streams-dark-a)"/>
+  <text x="560" y="96" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">stdout</text>
+  <rect x="64" y="76" width="160" height="72" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="144" y="100" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">ps aux</text>
+  <text x="144" y="117" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">every process</text>
+  <rect x="384" y="76" width="160" height="72" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="464" y="100" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">grep node</text>
+  <text x="464" y="117" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">only the ones you want</text>
+  <text x="16" y="252" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Every command takes the same three arguments. That is the whole trick.</text>
+</svg>

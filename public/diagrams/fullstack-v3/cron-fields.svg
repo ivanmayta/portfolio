@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 248" role="img" aria-labelledby="cron-fields-title cron-fields-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="cron-fields-title">The five fields of a cron job</title>
+  <desc id="cron-fields-desc">A crontab line is five time fields — minute, hour, day of month, month and weekday — followed by the command to run.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <text x="24" y="56" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em">crontab -e</text>
+  <text x="72" y="96" fill="#171717" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">*</text>
+  <path d="M 72 108 L 72 124" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="72" y="140" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">minute</text>
+  <text x="72" y="156" fill="#c4c4c8" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">0-59</text>
+  <text x="168" y="96" fill="#171717" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">*</text>
+  <path d="M 168 108 L 168 124" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="168" y="140" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">hour</text>
+  <text x="168" y="156" fill="#c4c4c8" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">0-23</text>
+  <text x="264" y="96" fill="#171717" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">*</text>
+  <path d="M 264 108 L 264 124" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="264" y="140" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">day</text>
+  <text x="264" y="156" fill="#c4c4c8" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">1-31</text>
+  <text x="360" y="96" fill="#171717" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">*</text>
+  <path d="M 360 108 L 360 124" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="360" y="140" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">month</text>
+  <text x="360" y="156" fill="#c4c4c8" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">1-12</text>
+  <text x="456" y="96" fill="#171717" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">*</text>
+  <path d="M 456 108 L 456 124" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="456" y="140" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">weekday</text>
+  <text x="456" y="156" fill="#c4c4c8" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">0-6</text>
+  <text x="556" y="92" fill="#9d4cfa" font-size="14" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">command</text>
+  <text x="24" y="196" fill="#52525b" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">*/2 * * * *</text>
+  <text x="148" y="196" fill="#52525b" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">every two minutes  —  the slash is the interval</text>
+  <text x="24" y="228" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Don't memorise it. crontab.guru writes it for you.</text>
+</svg>
