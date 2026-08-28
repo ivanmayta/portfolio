@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 296" role="img" aria-labelledby="internet-hops-dark-title internet-hops-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="internet-hops-dark-title">What one request actually crosses</title>
+  <desc id="internet-hops-dark-desc">A request leaves your network card, passes through your router and your internet provider, crosses one or more tier one backbones, reaches a data centre, is distributed by a load balancer, and finally arrives at your server.</desc>
+  <defs><marker id="internet-hops-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <rect x="16" y="72" width="128" height="52" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="80" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">you</text>
+  <text x="80" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">network card</text>
+  <rect x="176" y="72" width="128" height="52" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="240" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">router</text>
+  <text x="240" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">one public IP</text>
+  <rect x="336" y="72" width="128" height="52" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="400" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">your ISP</text>
+  <text x="400" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">you pay them</text>
+  <rect x="496" y="72" width="128" height="52" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="560" y="96" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">backbone</text>
+  <text x="560" y="113" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">tier 1</text>
+  <rect x="16" y="184" width="128" height="52" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="80" y="208" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">data centre</text>
+  <text x="80" y="225" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">digitalocean</text>
+  <rect x="176" y="184" width="128" height="52" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="240" y="208" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">load balancer</text>
+  <text x="240" y="225" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">picks one</text>
+  <rect x="336" y="184" width="128" height="52" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="400" y="208" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">your server</text>
+  <text x="400" y="225" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">finally</text>
+  <path d="M 144 98 L 172 98" stroke="#a1a1aa" stroke-width="1" marker-end="url(#internet-hops-dark-a)"/>
+  <path d="M 304 98 L 332 98" stroke="#a1a1aa" stroke-width="1" marker-end="url(#internet-hops-dark-a)"/>
+  <path d="M 464 98 L 492 98" stroke="#a1a1aa" stroke-width="1" marker-end="url(#internet-hops-dark-a)"/>
+  <path d="M 144 210 L 172 210" stroke="#a1a1aa" stroke-width="1" marker-end="url(#internet-hops-dark-a)"/>
+  <path d="M 304 210 L 332 210" stroke="#a1a1aa" stroke-width="1" marker-end="url(#internet-hops-dark-a)"/>
+  <path d="M 560 124 L 560 148 Q 560 156 552 156 L 88 156 Q 80 156 80 164 L 80 180" fill="none" stroke="#a1a1aa" stroke-width="1" marker-end="url(#internet-hops-dark-a)"/>
+  <rect x="276" y="132" width="136" height="14" rx="2" fill="#0c0c0e"/>
+  <text x="344" y="143" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">more backbones</text>
+  <text x="16" y="272" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Seven boxes here. traceroute google.com showed twenty hops.</text>
+</svg>

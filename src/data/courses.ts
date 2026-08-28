@@ -114,20 +114,17 @@ export const courses: Course[] = [
             {
                 id: "the-internet",
                 name: "The Internet",
+                summary:
+                    "The machinery under a request: the hops it crosses, the protocols that carry it, the phone book that resolves the name — and the server admin that section slides into.",
                 lessons: [
                     {
                         slug: "how-the-internet-works",
-                        title: "How the internet works",
-                        videos: ["How the Internet Works"],
+                        title: "How the internet works, and how to see it",
+                        videos: ["How the Internet Works", "Network Tools Exercise"],
                     },
                     {
-                        slug: "network-tools",
-                        title: "Network tools",
-                        videos: ["Network Tools Exercise"],
-                    },
-                    {
-                        slug: "internet-and-networking-terminology",
-                        title: "Internet and networking terminology",
+                        slug: "tcp-udp-and-packets",
+                        title: "TCP, UDP and packets",
                         videos: ["Internet & Networking Terminology"],
                     },
                     {

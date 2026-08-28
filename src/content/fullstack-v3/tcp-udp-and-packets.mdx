@@ -1,0 +1,69 @@
+export const meta = {
+    title: "TCP, UDP and packets",
+    summary:
+        "TCP shakes hands, counts, and resends what got lost. UDP throws data and doesn't look. Which one you want depends entirely on whether a missing piece matters.",
+    date: "2026-08-28",
+    minutes: 4,
+}
+
+Two protocols carry almost everything, and the difference between them is one
+question: **does it matter if a piece goes missing?**
+
+## TCP shakes hands first
+
+<Figure
+  src="/diagrams/fullstack-v3/tcp-handshake"
+  alt="A client sending SYN, the server replying SYN-ACK, the client answering ACK, and only then the data transfer beginning."
+  caption="Then it keeps counting: 90% arrived, these packets are missing, resend those."
+/>
+
+TCP — Transmission Control Protocol — exists because **the internet is
+unreliable**. Twenty hops to Google, any of which can drop, reroute, or accept
+traffic in one direction but not the other. Something has to guarantee the reply
+finds its way back.
+
+So TCP confirms delivery and retries what's missing until the transfer is
+complete. That reliability costs round trips, and it happens millions of times a
+day beneath everything you do.
+
+## UDP throws it and walks away
+
+UDP — User Datagram Protocol — has no handshake and no acknowledgement. It
+sprays data at you and assumes it lands.
+
+| | TCP | UDP |
+|---|---|---|
+| Guarantees delivery | yes | no |
+| Reassembles in order | yes | no |
+| Speed | slower | faster |
+| Bandwidth | heavier | lighter |
+| Use it for | web pages, files | live video, live audio |
+
+The trade is obvious once you see the use case. A **web page** needs every byte
+in order or it doesn't render — TCP. **Streaming video** doesn't: dropping a few
+frames is fine, and replaying one late frame would be worse than skipping it.
+Running video over TCP works, but the bandwidth cost is high for a guarantee you
+don't need.
+
+That momentary blur on a video call is UDP doing exactly what it promised.
+
+## ICMP, and how it got abused
+
+**ICMP** — Internet Control Message Protocol — carries no data. It just asks
+"are you there?". `ping` and `traceroute` are both ICMP.
+
+<Callout label="The ping of death">
+Every ping demands a reply, and every reply costs a little CPU. Get enough
+friends to ping one host and you can take it down — an early, very cheap denial
+of service. Worse: spoof the source address in the header, and the *victim*
+receives the replies to pings you sent. Modern networks mitigate this, but
+unpatched routers still get conscripted into DDoS attacks the same way.
+</Callout>
+
+Everything here moves as **packets** — the smallest unit that travels over a
+network. Splitting a 10 GB file into kilobyte chunks, labelling them, and
+reassembling them in order is a standard of its own, and worth weeks of study on
+its own terms.
+
+All of it rests on TCP/IP, which every piece of networking hardware on earth
+agrees to implement, without anyone having been made to.

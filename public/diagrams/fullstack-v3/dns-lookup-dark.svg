@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 288" role="img" aria-labelledby="dns-lookup-dark-title dns-lookup-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="dns-lookup-dark-title">What happens before the request</title>
+  <desc id="dns-lookup-dark-desc">The browser first asks a nameserver which IP address a domain maps to, receives the address, and only then opens a connection to that server and asks for the page.</desc>
+  <defs><marker id="dns-lookup-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <rect x="16" y="40" width="144" height="48" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="88" y="64" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">your browser</text>
+  <text x="88" y="81" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">wants a page</text>
+  <rect x="248" y="40" width="144" height="48" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="320" y="64" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">nameserver</text>
+  <text x="320" y="81" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">the phone book</text>
+  <rect x="480" y="40" width="144" height="48" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="552" y="64" fill="#ededed" font-size="12" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">the server</text>
+  <text x="552" y="81" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">at that IP</text>
+  <path d="M 88 88 L 88 244" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <path d="M 320 88 L 320 156" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <path d="M 552 88 L 552 244" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <path d="M 88 120 L 312 120" stroke="#a1a1aa" stroke-width="1" marker-end="url(#dns-lookup-dark-a)"/>
+  <rect x="159" y="98" width="82" height="15" rx="2" fill="#0c0c0e"/>
+  <text x="200" y="110" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">google.com?</text>
+  <path d="M 320 160 L 96 160" stroke="#a1a1aa" stroke-width="1" marker-end="url(#dns-lookup-dark-a)"/>
+  <rect x="161" y="138" width="94" height="15" rx="2" fill="#0c0c0e"/>
+  <text x="208" y="150" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">142.250.72.46</text>
+  <path d="M 88 204 L 544 204" stroke="#a1a1aa" stroke-width="1" marker-end="url(#dns-lookup-dark-a)"/>
+  <rect x="292" y="182" width="48" height="15" rx="2" fill="#0c0c0e"/>
+  <text x="316" y="194" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">GET /</text>
+  <path d="M 552 240 L 96 240" stroke="#a1a1aa" stroke-width="1" marker-end="url(#dns-lookup-dark-a)"/>
+  <rect x="292" y="218" width="64" height="15" rx="2" fill="#0c0c0e"/>
+  <text x="324" y="230" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">the page</text>
+  <text x="16" y="270" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Two conversations, not one. The name never reaches the server.</text>
+</svg>

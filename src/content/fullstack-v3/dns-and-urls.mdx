@@ -1,0 +1,82 @@
+export const meta = {
+    title: "DNS and URLs",
+    summary:
+        "DNS is the phone book: names in, IP addresses out. Two lookups happen before a page loads, and the URL you typed has more structure than you think.",
+    date: "2026-08-28",
+    minutes: 5,
+}
+
+You know an IP address gets you to a machine. So how does `google.com`?
+
+The **domain name system** is a phone book. Instead of memorising an address,
+you remember a name, and something translates. The machines holding those
+records are **nameservers** — independent operators that share records with each
+other, which is how a domain you buy from one company becomes reachable through
+everyone else's.
+
+<Figure
+  src="/diagrams/fullstack-v3/dns-lookup"
+  alt="A browser asking a nameserver which IP a domain maps to, receiving the address, then connecting to that server and requesting the page."
+  caption="The domain name never reaches the server. It's resolved and discarded before the connection opens."
+/>
+
+Without this the internet wouldn't have got far. Nobody memorises addresses.
+
+## Two record types
+
+- **A record** — maps a name to an IP address. This is the one you'll use.
+- **CNAME** — maps a name to another *name*, so you can point several domains at
+  the same place without a new IP.
+
+## See it yourself
+
+```bash
+nslookup frontendmasters.com    # which nameservers, and some IPs
+dig frontendmasters.com         # the actual DNS records, more verbose
+```
+
+Paste one of those IPs into your browser and you'll land on the site.
+
+You'll notice a domain returns **several** addresses. Almost no commercial site
+runs on one server — they're load balanced and fronted by CDNs, and the extra
+addresses are there for resilience as much as for scale.
+
+<Callout label="&quot;Non-authoritative answer&quot;">
+`nslookup` says this a lot. It means the nameserver that replied isn't the one
+that *owns* the record — it heard it from another nameserver, which probably
+heard it from another. It's the best available answer, not the source of truth.
+</Callout>
+
+## The anatomy of a URL
+
+URL stands for **Uniform Resource Locator** — it says where something is, and
+nothing more. It also has rules, like everything else here.
+
+<Figure
+  src="/diagrams/fullstack-v3/url-anatomy"
+  alt="A URL split into protocol, subdomain, domain, top level domain, path and query parameters."
+  caption="Subdomains are yours to invent — dev, test, staging — with no registrar involved."
+/>
+
+The **TLD** is the interesting one. `.com` used to be effectively the only
+option, governed by **ICANN**, and a slice of every domain purchase funds the
+system that keeps this working. Then companies started buying their own: Google
+owns `.google`. Now there's `.science`, `.best`, and a long tail of the strange.
+
+## The ugly side of names
+
+That explosion has consequences. Every time a new TLD launches, companies
+immediately buy the insulting variants of their own name so nobody else can.
+
+Two attacks worth recognising:
+
+- **Lookalike domains** — `netf1ix.com` with a one, `micros0ft.com` with a zero,
+  a cloned homepage, and a login form that harvests credentials.
+- **Plausible subdomains** — a `help.` prefix on a domain that looks official
+  enough to a relative who isn't reading closely.
+
+**Cybersquatting** is registering a name you have no use for, to sit on it. But
+the line is genuinely blurry, and Jem's example is the good one: `toyota.com`
+originally belonged to a mechanic whose surname was Toyota. Legitimate use, got
+there first — and then sued by a car company with twenty lawyers. ICANN
+arbitrates these, and it does not always land where "finders keepers" would.
