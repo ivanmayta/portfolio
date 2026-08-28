@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 416" role="img" aria-labelledby="terminal-stack-title terminal-stack-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="terminal-stack-title">Where the terminal sits</title>
+  <desc id="terminal-stack-desc">Five stacked layers from you at the top down to hardware: you type into a terminal, the terminal runs a shell, and the shell is the layer that actually asks the operating system to do things.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <text x="16" y="28" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em">CLOSER TO YOU</text>
+  <text x="624" y="352" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em" text-anchor="end">CLOSER TO THE METAL</text>
+  <rect x="16" y="48" width="608" height="56" rx="6" fill="#fafafa" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="32" y="81" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">01</text>
+  <text x="72" y="81" fill="#171717" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">You</text>
+  <text x="608" y="81" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">keystrokes in, text back</text>
+  <rect x="16" y="104" width="608" height="56" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="32" y="137" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">02</text>
+  <text x="72" y="137" fill="#171717" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Terminal</text>
+  <text x="608" y="137" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">iTerm, Terminal.app</text>
+  <rect x="16" y="160" width="608" height="56" rx="6" fill="rgba(157,76,250,0.08)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="32" y="193" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">03</text>
+  <text x="72" y="193" fill="#171717" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Shell</text>
+  <text x="608" y="193" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">bash, zsh — runs what you typed</text>
+  <rect x="16" y="216" width="608" height="56" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="32" y="249" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">04</text>
+  <text x="72" y="249" fill="#171717" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Operating system</text>
+  <text x="608" y="249" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">kernel, files, processes</text>
+  <rect x="16" y="272" width="608" height="56" rx="6" fill="#fafafa" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="32" y="305" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">05</text>
+  <text x="72" y="305" fill="#171717" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Hardware</text>
+  <text x="608" y="305" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">cpu, disk, network</text>
+  <text x="16" y="376" fill="#52525b" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Swap iTerm for Terminal.app and nothing changes.</text>
+  <text x="16" y="396" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Swap bash for zsh and everything does.</text>
+</svg>

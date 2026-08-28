@@ -1,0 +1,113 @@
+export const meta = {
+    title: "The terminal, and the commands that matter",
+    summary:
+        "The terminal is just a window; the shell is the thing that talks to the operating system. Nine commands cover most of the work, and only one of them can't be undone.",
+    date: "2026-08-28",
+    minutes: 6,
+}
+
+I came into this lesson thinking "terminal" and "shell" were two words for the same
+thing. They are not, and the distinction turns out to be the whole point of the
+section — it is why you can switch terminal apps on a whim and why switching shells
+is a decision.
+
+## The terminal is not the shell
+
+The terminal is an application: a window that draws text and takes keystrokes. iTerm,
+Terminal.app, Windows Terminal — they are interchangeable. What runs *inside* it is
+the shell: `bash`, `zsh`, `fish`. The shell is what reads what you typed, works out
+what you meant, and asks the operating system to do it.
+
+<Figure
+  src="/diagrams/fullstack-v3/terminal-stack"
+  alt="Five stacked layers: you, terminal, shell, operating system, hardware. The shell is highlighted."
+  caption="You type into the terminal, but the shell is the layer that actually asks the operating system for anything."
+/>
+
+That is why Jem spends about thirty seconds on terminal emulators — pick whichever
+one you like, he uses iTerm for its split panes — and then says the shell matters.
+The terminal is preference. The shell is behaviour.
+
+## Why bother, when there is a GUI
+
+The argument is not that the terminal is cool. It is four concrete properties:
+
+- **Fast.** There is no layer between you and the operating system to negotiate with.
+- **Consistent.** The commands you run on your laptop are the commands you run on the
+  server you deploy to. Same input, same result.
+- **Portable.** That consistency mostly survives changing machines and changing
+  operating systems.
+- **Low overhead.** A shell sits idle costing nothing, runs your command, and stops.
+  No background work, no fluff.
+
+The consistency point is the one that actually sold me. Everything else in a full
+stack course happens on a machine you cannot click around on.
+
+## The commands that carry the work
+
+| Command | What it does | Worth knowing |
+|---|---|---|
+| `ls` | List what is in the current directory | The one you will type most |
+| `cd` | Change directory | `cd ..` goes up, `cd ~` goes home |
+| `mkdir` | Make a directory | |
+| `rmdir` | Remove a directory | Refuses if it is not empty, which is why nobody uses it |
+| `cat` | Dump a file's contents | Fine for short files |
+| `less` | Show a file one page at a time | What you want for long ones |
+| `touch` | Create an empty file | Not actually what it does — see below |
+| `rm` | Remove a file | `rm -rf` removes recursively and does not ask |
+| `echo` | Print its input back | Trivial alone, essential in scripts |
+| `man` | The manual page for a program | Hard to read, and it will still save you |
+
+On `man`: it is genuinely awkward to parse, and it is also the reason you can work
+on a machine with no internet. Every program installed on that box documented
+itself. That is a quietly amazing property of the system.
+
+## The exercise
+
+Make a directory, go into it, make a file, come back out, delete the lot.
+
+```bash
+cd ~            # start from home
+mkdir temp      # make a directory
+cd temp         # move into it
+ls              # nothing here yet
+touch hello     # make an empty file
+ls              # hello
+cd ..           # back up one level
+rm -rf temp     # remove the directory and everything in it
+```
+
+<Figure
+  src="/diagrams/fullstack-v3/command-line-exercise"
+  alt="Three snapshots of the home directory: empty, then holding temp and hello, then empty again."
+  caption="Three states, not eight commands. The marker tracks the working directory — losing track of it is half of early command-line confusion."
+/>
+
+The thing to watch is the marker: where you *are* changes what every following
+command means. `rm -rf temp` is safe in the third panel because we stepped out
+first. Run the same eleven characters one directory over and it is a different
+sentence entirely.
+
+<Callout label="No undo">
+There is no trash can. `rm -rf` unlinks the files and returns to the prompt. Before
+you run it, read the path you typed rather than the path you meant.
+</Callout>
+
+## Two things I had wrong
+
+**`touch` does not create files.** It asks the operating system to update a file's
+last-modified time. When the file does not exist, the operating system creates it and
+then sets the time — so creation is a side effect, not the purpose. This works
+cleanly on Linux because a file there has no type: the system associates a name and
+some timestamps and little else. On Windows, where an `.exe` and a `.dll` are
+genuinely different kinds of thing, that shortcut would be a much stranger idea.
+
+**`rmdir` is not the safe version of `rm`.** I assumed it was the careful one to
+reach for. It just refuses on a non-empty directory, so in practice you skip it and
+type `rm -rf`, which is the opposite of careful. The safety has to come from you.
+
+## If you are on Windows
+
+Install WSL, the Linux subsystem. It takes a while and wants a restart, and paths
+will read differently — forward slashes instead of back — but the commands above are
+then the same commands.

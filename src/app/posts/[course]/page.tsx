@@ -1,40 +1,41 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { routes, routeBySlug, lessonCounts } from "@/data/routes"
-import { Progress } from "@/components/route-status"
+import { courses, courseBySlug } from "@/data/courses"
+import { courseProgress, isPublished } from "@/lib/content"
+import { Progress } from "@/components/course-status"
 import { cn } from "@/lib/utils"
 
 export const dynamicParams = false
 
 export function generateStaticParams() {
-    return routes.map((route) => ({ route: route.slug }))
+    return courses.map((course) => ({ course: course.slug }))
 }
 
 export async function generateMetadata({
     params,
 }: {
-    params: Promise<{ route: string }>
+    params: Promise<{ course: string }>
 }): Promise<Metadata> {
-    const { route } = await params
-    const found = routeBySlug(route)
+    const { course } = await params
+    const found = courseBySlug(course)
     if (!found) return {}
     return {
-        title: `${found.name} | notes | iverse.dev`,
+        title: `${found.name} | posts | iverse.dev`,
         description: found.summary,
     }
 }
 
-export default async function RoutePage({
+export default async function CoursePage({
     params,
 }: {
-    params: Promise<{ route: string }>
+    params: Promise<{ course: string }>
 }) {
-    const { route: slug } = await params
-    const route = routeBySlug(slug)
-    if (!route) notFound()
+    const { course: slug } = await params
+    const course = courseBySlug(slug)
+    if (!course) notFound()
 
-    const { written } = lessonCounts(route)
+    const { published, listed } = courseProgress(course)
 
     return (
         <>
@@ -42,27 +43,27 @@ export default async function RoutePage({
                 aria-label="Breadcrumb"
                 className="flex items-center gap-2.5 pt-14 pb-6 font-mono text-[11px] text-dim"
             >
-                <Link href="/notes" className="text-subtle hover:text-accent transition-colors">
-                    notes
+                <Link href="/posts" className="text-subtle hover:text-accent transition-colors">
+                    posts
                 </Link>
                 <span>/</span>
-                <span className="text-muted">{route.name.toLowerCase()}</span>
+                <span className="text-muted">{course.slug}</span>
             </nav>
 
             <section className="pb-8">
                 <h2 className="font-serif text-[34px] sm:text-[44px] leading-[1.08] tracking-[-0.015em] text-pretty">
-                    {route.name}
+                    {course.name}
                 </h2>
                 <p className="mt-5 max-w-[540px] text-base leading-[1.62] text-muted text-pretty">
-                    {route.summary}
+                    {course.summary}
                 </p>
                 <div className="flex items-center gap-3.5 flex-wrap mt-6 font-mono text-[10.5px] uppercase tracking-[0.08em] text-dim">
-                    <span>{route.teacher}</span>
+                    <span>{course.teacher}</span>
                     <span className="block w-px h-2.5 bg-line" />
                     <span>Frontend Masters</span>
                     <span className="block w-px h-2.5 bg-line" />
                     <a
-                        href={route.courseUrl}
+                        href={course.courseUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-subtle hover:text-accent transition-colors"
@@ -72,16 +73,18 @@ export default async function RoutePage({
                 </div>
                 <div className="flex items-center gap-4 mt-5">
                     <div className="grow">
-                        <Progress written={written} total={route.total} />
+                        <Progress published={published} listed={listed} />
                     </div>
                     <span className="font-mono text-[11px] text-subtle whitespace-nowrap">
-                        {written} of {route.total} written
+                        {published} of {listed} written
                     </span>
                 </div>
             </section>
 
-            {route.topics.map((topic, index) => {
-                const done = topic.lessons.filter((l) => l.status === "written").length
+            {course.topics.map((topic, index) => {
+                const done = topic.lessons.filter((lesson) =>
+                    isPublished(course.slug, lesson.slug)
+                ).length
                 return (
                     <section
                         key={topic.id}
@@ -108,34 +111,37 @@ export default async function RoutePage({
                                 {topic.summary}
                             </p>
                             <ul className="mt-4">
-                                {topic.lessons.map((lesson) => (
-                                    <li
-                                        key={lesson.slug}
-                                        className="grid grid-cols-[14px_minmax(0,1fr)_56px] gap-3.5 items-baseline py-2.5 border-t border-hairline"
-                                    >
-                                        <span
-                                            className={cn(
-                                                "block w-1.5 h-1.5 mt-1.5 rounded-full",
-                                                lesson.status === "written"
-                                                    ? "bg-accent"
-                                                    : "border border-faint"
-                                            )}
-                                        />
-                                        <span
-                                            className={cn(
-                                                "text-[15px] text-pretty",
-                                                lesson.status === "written"
-                                                    ? "text-foreground/85"
-                                                    : "text-dim"
-                                            )}
+                                {topic.lessons.map((lesson) => {
+                                    const live = isPublished(course.slug, lesson.slug)
+                                    return (
+                                        <li
+                                            key={lesson.slug}
+                                            className="group/row grid grid-cols-[14px_minmax(0,1fr)] gap-3.5 items-baseline py-2.5 border-t border-hairline"
                                         >
-                                            {lesson.title}
-                                        </span>
-                                        <span className="font-mono text-[10.5px] text-dim text-right">
-                                            {lesson.date ?? "—"}
-                                        </span>
-                                    </li>
-                                ))}
+                                            <span
+                                                className={cn(
+                                                    "block w-1.5 h-1.5 mt-1.5 rounded-full",
+                                                    live ? "bg-accent" : "border border-faint"
+                                                )}
+                                            />
+                                            {live ? (
+                                                <Link
+                                                    href={`/posts/${course.slug}/${lesson.slug}`}
+                                                    className="text-[15px] text-foreground/85 group-hover/row:text-accent transition-colors text-pretty"
+                                                >
+                                                    {lesson.title}{" "}
+                                                    <span className="inline-block text-faint transition-transform duration-200 group-hover/row:translate-x-0.5">
+                                                        →
+                                                    </span>
+                                                </Link>
+                                            ) : (
+                                                <span className="text-[15px] text-dim text-pretty">
+                                                    {lesson.title}
+                                                </span>
+                                            )}
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     </section>

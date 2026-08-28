@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
-import { NotesPreview } from "@/components/notes-preview"
+import { Interests } from "@/components/interests"
+import { PostsPreview } from "@/components/posts-preview"
 import { Projects } from "@/components/projects"
 import Contributions from "@/components/contributions"
 import { Network } from "@/components/network"
@@ -10,7 +11,8 @@ export default async function Home() {
         <>
             <Hero />
             <About />
-            <NotesPreview />
+            <Interests />
+            <PostsPreview />
             <Projects />
             <Contributions />
             <Network />

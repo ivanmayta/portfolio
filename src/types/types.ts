@@ -19,13 +19,9 @@ type Highlight = {
     icon: LucideIcon | React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
 
-export type NoteStatus = "written" | "planned"
-
 export type Lesson = {
     slug: string
     title: string
-    status: NoteStatus
-    date?: string
 }
 
 export type Topic = {
@@ -35,13 +31,19 @@ export type Topic = {
     lessons: Lesson[]
 }
 
-export type Route = {
+export type Course = {
     slug: string
     name: string
     teacher: string
     courseUrl: string
-    status: "in-progress" | "queued" | "finished"
     summary: string
-    total: number
     topics: Topic[]
+}
+
+/** Frontmatter of a post, exported as `meta` from its .mdx file. */
+export type PostMeta = {
+    title: string
+    summary: string
+    date: string
+    minutes: number
 }

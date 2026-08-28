@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 296" role="img" aria-labelledby="command-line-exercise-title command-line-exercise-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="command-line-exercise-title">The exercise, in three states</title>
+  <desc id="command-line-exercise-desc">Three snapshots of the home directory: empty at the start, then holding a temp directory with a hello file inside it while the working directory has moved into temp, then back at home with both deleted.</desc>
+  <defs><marker id="command-line-exercise-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#52525b"/></marker></defs>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <rect x="16" y="56" width="184" height="152" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="32" y="80" fill="#71717a" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">01</text>
+  <text x="32" y="108" fill="#9d4cfa" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">~</text>
+  <text x="184" y="108" fill="#9d4cfa" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end" letter-spacing="0.1em">CWD</text>
+  <text x="32" y="232" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">where you start</text>
+  <text x="16" y="42" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">cd ~</text>
+  <path d="M 204 132 L 216 132" stroke="#52525b" stroke-width="1" marker-end="url(#command-line-exercise-a)"/>
+  <rect x="224" y="56" width="184" height="152" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="240" y="80" fill="#71717a" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">02</text>
+  <text x="240" y="108" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">~</text>
+  <text x="240" y="132" fill="#9d4cfa" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">└── temp</text>
+  <text x="392" y="132" fill="#9d4cfa" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end" letter-spacing="0.1em">CWD</text>
+  <text x="256" y="156" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">└── hello</text>
+  <text x="240" y="232" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">two new things exist</text>
+  <text x="224" y="42" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">mkdir · cd · touch</text>
+  <path d="M 412 132 L 424 132" stroke="#52525b" stroke-width="1" marker-end="url(#command-line-exercise-a)"/>
+  <rect x="432" y="56" width="184" height="152" rx="6" fill="rgba(157,76,250,0.08)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="448" y="80" fill="#71717a" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">03</text>
+  <text x="448" y="108" fill="#9d4cfa" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">~</text>
+  <text x="600" y="108" fill="#9d4cfa" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end" letter-spacing="0.1em">CWD</text>
+  <text x="448" y="132" fill="#c4c4c8" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-decoration="line-through">└── temp</text>
+  <text x="464" y="156" fill="#c4c4c8" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-decoration="line-through">└── hello</text>
+  <text x="448" y="232" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">both are gone, for good</text>
+  <text x="432" y="42" fill="#171717" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">cd .. · rm -rf</text>
+  <text x="16" y="284" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Everything here is reversible except the last step.</text>
+</svg>

@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
+import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+}
 
-export default nextConfig;
+// Plugins are named as strings: Turbopack can't take JS functions across the
+// Rust boundary.
+const withMDX = createMDX({
+    options: {
+        remarkPlugins: ["remark-gfm"],
+        rehypePlugins: ["rehype-slug"],
+    },
+})
+
+export default withMDX(nextConfig)
