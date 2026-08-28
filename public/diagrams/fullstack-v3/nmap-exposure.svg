@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 264" role="img" aria-labelledby="nmap-exposure-title nmap-exposure-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="nmap-exposure-title">What nmap finds on a fresh droplet</title>
+  <desc id="nmap-exposure-desc">Scanning your own server shows SSH on 22 and HTTP on 80, both needed, and port 3000 left open by the Node process even though nginx already proxies to it.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <text x="24" y="60" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em">nmap YOUR.DROPLET.IP</text>
+  <text x="24" y="92" fill="#71717a" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PORT</text>
+  <text x="136" y="92" fill="#71717a" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">STATE</text>
+  <text x="216" y="92" fill="#71717a" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">SERVICE</text>
+  <path d="M 24 102 L 616 102" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="24" y="128" fill="#171717" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">22/tcp</text>
+  <text x="136" y="128" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">open</text>
+  <text x="216" y="128" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ssh</text>
+  <text x="616" y="128" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">you need this</text>
+  <text x="24" y="164" fill="#171717" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">80/tcp</text>
+  <text x="136" y="164" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">open</text>
+  <text x="216" y="164" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">http</text>
+  <text x="616" y="164" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">you need this</text>
+  <text x="24" y="200" fill="#9d4cfa" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">3000/tcp</text>
+  <text x="136" y="200" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">open</text>
+  <text x="216" y="200" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">node</text>
+  <text x="616" y="200" fill="#9d4cfa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end">nginx already proxies it</text>
+  <text x="24" y="240" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Node opened 3000 to the world. Nothing outside needs to reach it.</text>
+</svg>

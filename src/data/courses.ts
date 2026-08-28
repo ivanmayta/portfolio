@@ -182,31 +182,23 @@ export const courses: Course[] = [
             {
                 id: "security",
                 name: "Security",
+                summary:
+                    "What someone gets when they take your server, and the three things that stop them: keys, a firewall, and staying patched.",
                 lessons: [
                     {
-                        slug: "security",
-                        title: "Security",
-                        videos: ["Security"],
+                        slug: "what-an-attacker-gets",
+                        title: "What an attacker gets, and what you left open",
+                        videos: ["Security", "View Open Ports with nmap"],
                     },
                     {
-                        slug: "open-ports-with-nmap",
-                        title: "Open ports with nmap",
-                        videos: ["View Open Ports with nmap"],
+                        slug: "firewalls-with-ufw",
+                        title: "Firewalls with ufw, and staying patched",
+                        videos: ["Firewall & ufw", "Unattended Upgrades"],
                     },
                     {
-                        slug: "firewall-and-ufw",
-                        title: "Firewall and ufw",
-                        videos: ["Firewall & ufw"],
-                    },
-                    {
-                        slug: "permissions-and-chmod",
-                        title: "Permissions and chmod",
+                        slug: "permissions-properly",
+                        title: "Permissions, properly",
                         videos: ["Permissions & chmod"],
-                    },
-                    {
-                        slug: "unattended-upgrades",
-                        title: "Unattended upgrades",
-                        videos: ["Unattended Upgrades"],
                     },
                 ],
             },

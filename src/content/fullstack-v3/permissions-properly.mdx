@@ -1,0 +1,60 @@
+export const meta = {
+    title: "Permissions, properly",
+    summary:
+        "`rwx` in three groups: owner, group, everyone else. Read 4, write 2, execute 1 — so 754 and `rwxr-xr--` are the same sentence. And `777` is a confession, not a fix.",
+    date: "2026-08-28",
+    minutes: 3,
+}
+
+You've been running `chmod 644` and `chmod 600` on faith. Here's what the
+numbers say.
+
+`ls -la` prints something like `-rw-r--r--`. Those letters are **read**,
+**write** and **execute** — `x` rather than `e`, for no good reason — arranged
+in three groups:
+
+<Figure
+  src="/diagrams/fullstack-v3/permission-string"
+  alt="A permission string split into a type character and three groups of rwx for owner, group and others, each mapped to its octal digit seven, five and four."
+  caption="The leading character is the type — a dash for a file, `d` for a directory."
+/>
+
+**Owner** is you. **Group** is the groups you belong to — on your server that's
+`sudo`, since it's the only one you joined. **Others** is everyone else.
+
+So `app.js` at `-rw-rw-r--` reads: I can read and write it; my group can read and
+write it; everyone else can only read. No execute anywhere, because you don't
+run it directly — `node` does.
+
+## The arithmetic
+
+Octal, base 8:
+
+| | |
+|---|---|
+| read | 4 |
+| write | 2 |
+| execute | 1 |
+
+Add them per group and you get the digit. That's all there is.
+
+- **`600`** — only I can read and write. Nobody else does anything. This is what
+  SSH demands of a private key, and now you know why it's that number.
+- **`644`** — I read and write, everyone reads.
+- **`755`** — I do everything, everyone reads and executes. Directories usually.
+- **`777`** — 4+2+1 three times. Anyone, anything, anywhere.
+
+<Callout label="On 777">
+Everyone has typed it. It is what you reach for when you don't understand
+permissions and want the error to go away, and Jem admits to exactly that. It
+works, in the sense that removing the lock makes the door open.
+</Callout>
+
+## Least privilege, and whose fault it is
+
+The rule is to grant the fewest permissions that let the work happen.
+
+Jem's framing is the one worth keeping: if you leave a glass vase where a child
+can reach it and it breaks, that's on you. If a user on your server can
+`rm -rf /` because you gave them permission to, the outcome is yours. The
+permission you granted is the decision you made.

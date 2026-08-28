@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 248" role="img" aria-labelledby="permission-string-dark-title permission-string-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="permission-string-dark-title">The permission string and its number</title>
+  <desc id="permission-string-dark-desc">The letters ls prints are three groups of read, write and execute for the owner, the group and everyone else, and each group adds up to one digit of the chmod number.</desc>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <text x="40" y="60" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em">WHAT ls -la PRINTS  ·  WHAT chmod TAKES</text>
+  <text x="40" y="96" fill="#a1a1aa" font-size="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">-</text>
+  <text x="40" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">type</text>
+  <text x="148" y="96" fill="#ededed" font-size="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">rwx</text>
+  <path d="M 104 110 L 104 116 L 192 116 L 192 110" fill="none" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="148" y="136" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">owner</text>
+  <text x="148" y="172" fill="#9d4cfa" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">7</text>
+  <text x="148" y="192" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">read + write + execute</text>
+  <text x="288" y="96" fill="#ededed" font-size="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">r-x</text>
+  <path d="M 244 110 L 244 116 L 332 116 L 332 110" fill="none" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="288" y="136" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">group</text>
+  <text x="288" y="172" fill="#9d4cfa" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">5</text>
+  <text x="288" y="192" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">read + execute</text>
+  <text x="428" y="96" fill="#ededed" font-size="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">r--</text>
+  <path d="M 384 110 L 384 116 L 472 116 L 472 110" fill="none" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="428" y="136" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">others</text>
+  <text x="428" y="172" fill="#9d4cfa" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">4</text>
+  <text x="428" y="192" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">read only</text>
+  <text x="40" y="228" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Same information, two notations. 754 is just rwx r-x r-- counted up.</text>
+</svg>

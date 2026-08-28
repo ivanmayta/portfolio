@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 272" role="img" aria-labelledby="deny-vs-reject-title deny-vs-reject-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="deny-vs-reject-title">deny against reject</title>
+  <desc id="deny-vs-reject-desc">A denied packet is dropped with no reply, so a scanner learns nothing and you spend no bandwidth. A rejected packet gets an ICMP error back, which confirms the host exists and costs you a response per attempt.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <rect x="16" y="64" width="288" height="160" rx="6" fill="rgba(157,76,250,0.08)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="32" y="56" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">DENY</text>
+  <text x="32" y="94" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ufw deny 3000</text>
+  <text x="32" y="128" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">packet arrives  →  dropped</text>
+  <text x="32" y="154" fill="#9d4cfa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">reply sent      →  none</text>
+  <text x="32" y="180" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">scanner learns  →  nothing</text>
+  <text x="32" y="204" fill="#171717" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Silence. What you usually want.</text>
+  <rect x="336" y="64" width="288" height="160" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="352" y="56" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">REJECT</text>
+  <text x="352" y="94" fill="#171717" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ufw reject 3000</text>
+  <text x="352" y="128" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">packet arrives  →  refused</text>
+  <text x="352" y="154" fill="#c4c4c8" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">reply sent      →  ICMP error</text>
+  <text x="352" y="180" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">scanner learns  →  it is alive</text>
+  <text x="352" y="204" fill="#52525b" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Polite, and it costs you a reply.</text>
+  <text x="16" y="252" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Every reply is bandwidth an attacker can make you spend.</text>
+</svg>
