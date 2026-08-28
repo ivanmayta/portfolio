@@ -4,7 +4,7 @@ export default function TermsAndConditions() {
             <h1 className="text-3xl font-bold">Términos y Condiciones</h1>
 
             <div className="text-start space-y-6 prose prose-invert max-w-none">
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-muted">
                     Última actualización:{" "}
                     {new Date().toLocaleDateString("es-ES", {
                         year: "numeric",
@@ -301,14 +301,14 @@ export default function TermsAndConditions() {
                         <li>Email: [su-email@ejemplo.com]</li>
                         <li>Sitio web: https://iverse.dev</li>
                     </ul>
-                    <p className="text-sm text-zinc-400 mt-4">
+                    <p className="text-sm text-muted mt-4">
                         Nota: Por favor, reemplace [su-email@ejemplo.com] con su
                         dirección de email real.
                     </p>
                 </div>
 
-                <div className="space-y-4 pt-4 border-t border-zinc-800">
-                    <p className="text-sm text-zinc-400">
+                <div className="space-y-4 pt-4 border-t border-line">
+                    <p className="text-sm text-muted">
                         Estos términos cumplen con los requisitos del Portal de
                         Desarrolladores de Facebook para aplicaciones que
                         integran Messenger y conversaciones de Facebook.

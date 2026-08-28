@@ -1,22 +1,17 @@
-import { ArrowUpRight } from "lucide-react"
-import { Heart } from "lucide-react"
-
 export function Footer() {
     return (
-        <footer className="w-full flex items-center justify-between py-6">
-            <div className="group">
-                <a
-                    className="flex  items-center  underline-offset-[5px] hover:underline decoration-dotted gap-2 "
-                    href="https://github.com/iversedev"
-                    target="_blank"
-                >
-                    <Heart className="w-4 text-red-500 group-hover:transform group-hover:animate-pulse" />
-                    <span> iverse.dev</span>
-                    <ArrowUpRight className="w-4 opacity-50 duration-200 group-hover:translate-x-[1.5px] group-hover:opacity-100" />
-                </a>
-            </div>
-
-            <span>2025</span>
+        <footer className="flex items-center justify-between py-8 border-t border-hairline">
+            <a
+                className="font-mono text-[11.5px] text-dim hover:text-accent transition-colors"
+                href="https://github.com/iversedev"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                built with Next.js · hosted on Vercel
+            </a>
+            <span className="font-mono text-[11.5px] text-faint">
+                © {new Date().getFullYear()} iverse.dev
+            </span>
         </footer>
     )
 }
