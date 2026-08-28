@@ -1,0 +1,52 @@
+export const meta = {
+    title: "Buying a domain name",
+    summary:
+        "A registrar sells you a name and registers it as yours. Skip the upsells, put two-factor on the account, and remember some TLDs are restricted and some belong to countries.",
+    date: "2026-08-28",
+    minutes: 3,
+}
+
+A **registrar** is a company that registers a domain to you as its owner —
+Namecheap, Google Domains, and many others. The course uses **Namecheap**, not
+because the UI is great but because it has the widest selection at the lowest
+prices and doesn't push add-ons at you the whole way through.
+
+You don't need any of the extras at checkout. **SSL you'll set up yourself, for
+free**, later in the course.
+
+<Callout label="Lock the account down">
+Your registrar account is the single point of failure for your entire domain.
+Steal those credentials and you can point the name anywhere — clone the site,
+put up a login form, harvest everything. Strong password, two-factor, and as few
+people with access as possible.
+</Callout>
+
+## Not every TLD is for sale
+
+Some are **restricted** and you simply can't have them:
+
+| | |
+|---|---|
+| `.org` | a registered organisation, typically a nonprofit |
+| `.edu` | a legitimate educational institution |
+| `.gov` | government entities |
+| `.mil` | military |
+
+Others are **country-level**, registered to that country with ICANN — `.ru` is
+Russia's. But a country can sell the rights, which is how `.ly` ended up
+carrying `bit.ly` and `fast.ly` during the vowel-dropping startup era. A small
+island nation made real money because its country code happened to rhyme with
+English.
+
+Part of every purchase and renewal goes to **ICANN**, which is what funds the
+nameserver system you've been using this whole time.
+
+## Then hook it up
+
+Buying the name is where most people stop, and it's the missing link: the domain
+does nothing until you point it at something. Next you'll change the
+**nameservers** to your host's and add an **A record** pointing the name at your
+droplet's IP.
+
+One rule for the name itself, and Jem is serious about it: make it funny or
+memorable, ideally both.

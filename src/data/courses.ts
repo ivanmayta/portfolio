@@ -138,19 +138,13 @@ export const courses: Course[] = [
                         videos: ["Buying a Domain Name"],
                     },
                     {
-                        slug: "update-and-restart-the-server",
-                        title: "Update and restart the server",
-                        videos: ["Update & Restart Server"],
-                    },
-                    {
-                        slug: "creating-a-user",
-                        title: "Creating a user",
-                        videos: ["Create a User"],
-                    },
-                    {
-                        slug: "file-permissions",
-                        title: "File permissions",
-                        videos: ["File Permissions"],
+                        slug: "hardening-a-fresh-server",
+                        title: "Hardening a fresh server",
+                        videos: [
+                            "Update & Restart Server",
+                            "Create a User",
+                            "File Permissions",
+                        ],
                     },
                 ],
             },
