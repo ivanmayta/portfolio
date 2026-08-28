@@ -20,6 +20,8 @@ export const courses: Course[] = [
                 name: "The command line",
                 summary:
                     "Talking to the operating system directly — the terminal, the shell behind it, and the handful of commands that carry most of the work.",
+                // Slides 26-32. Covers both the "Command Line Exercise" and
+                // "Command Line Solution" videos — one post per topic, not per video.
                 lessons: [
                     {
                         slug: "terminal-and-the-commands-that-matter",
@@ -32,6 +34,7 @@ export const courses: Course[] = [
                 name: "Vim",
                 summary:
                     "Editing files on a machine that has no editor but this one.",
+                // Slides 33 onward.
                 lessons: [{ slug: "editing-files-with-vim", title: "Editing files with Vim" }],
             },
             {

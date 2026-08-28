@@ -1,18 +1,18 @@
 export const meta = {
     title: "The terminal, and the commands that matter",
     summary:
-        "The terminal is a window; the shell is what actually talks to the operating system. Ten commands cover most of the work, and one of them has no undo.",
+        "The terminal is a window; the shell is what actually talks to the operating system. Ten commands cover most of the work, one has no undo, and `man` is how you look up the rest.",
     date: "2026-08-28",
-    minutes: 3,
+    minutes: 4,
 }
 
 ## The terminal is not the shell
 
-The **terminal** is an application — a window that draws text. iTerm,
-Terminal.app, Windows Terminal: interchangeable, pick one.
+The **terminal** is an application — a window that draws text. iTerm2,
+Terminal.app: interchangeable, pick one.
 
-The **shell** is what runs inside it — `bash`, `zsh`, `fish`. It reads what you
-typed and asks the operating system to do it. That one is a decision.
+The **shell** is what runs inside it. It reads what you typed and asks the
+operating system to do it. That one is a decision.
 
 <Figure
   src="/diagrams/fullstack-v3/terminal-stack"
@@ -34,7 +34,7 @@ a machine you cannot click around on.
 
 | | | |
 |---|---|---|
-| `ls` | list directory contents | the one you type most |
+| `ls` | list directory contents | `ls -la` is the one worth muscle memory |
 | `cd` | change directory | `cd ..` up, `cd ~` home |
 | `mkdir` | make a directory | |
 | `rmdir` | remove a directory | refuses if it isn't empty |
@@ -44,6 +44,10 @@ a machine you cannot click around on.
 | `rm` | remove a file | `rm -rf` is recursive and silent |
 | `echo` | repeat input | essential inside scripts |
 | `man` | the manual for a command | awkward to read, and it works offline |
+
+`ls -la` is two flags worth knowing: `-l` gives permissions, size and modified
+time; `-a` shows dotfiles. Without `-a` your `.gitignore` is invisible and you
+will swear it was there.
 
 ## The exercise
 
@@ -64,17 +68,32 @@ rm -rf temp
   caption="Watch the CWD marker. Where you are changes what every following command means."
 />
 
+`hello` has no extension and no type — it is a blob of bytes with a name. That
+is the whole story of a file here.
+
 <Callout label="No undo">
-There is no trash can. `rm -rf` unlinks and returns to the prompt. Read the path
-you typed, not the path you meant.
+There is no trash can. `rm -rf` unlinks and returns to the prompt — `-r`
+recursive, `-f` force. Read the path you typed, not the path you meant.
 </Callout>
 
-## Two gotchas
+## When you get lost
+
+- `pwd` — print working directory. The answer to "wait, where am I?"
+- `cd ~` — home, and much faster than typing `/Users/you`
+- `cd ..` — up one. Keep going and you land at `/`, the root of the
+  filesystem. If you are there, you probably didn't mean to be.
+- `clear` — wipe the screen
+- `ctrl + c` — kill whatever is running
+- **Tab** — autocompletes paths. Type one letter and hit it.
+
+## Three gotchas
 
 - **`touch` doesn't create files.** It updates a file's modified time; when the
-  file doesn't exist, the OS creates it first. Creation is a side effect. This
-  works because a Linux file has no type — just a name and some timestamps.
+  file doesn't exist, the OS creates it first. Creation is a side effect.
 - **`rmdir` isn't the safe `rm`.** It only refuses on a non-empty directory, so
   you skip it and type `rm -rf` anyway. The safety has to come from you.
+- **`man` is searchable, and `q` gets you out.** Type `/` then what you're
+  after — `/-r` jumps to that flag. Nobody remembers every flag; knowing where
+  to look is the actual skill.
 
 On Windows, install WSL — same commands, forward slashes instead of back.
