@@ -23,8 +23,9 @@ operating system to do it. That one is a decision.
 ## Why it's worth learning
 
 - **Fast** — nothing sits between you and the operating system.
-- **Consistent** — the commands on your laptop are the commands on the server
-  you deploy to.
+- **Consistent, and portable** — the commands on your laptop are the commands on
+  the server you deploy to, and that mostly survives changing machines and
+  operating systems.
 - **Low overhead** — it waits, it runs, it stops. No background work.
 
 The consistency is the real argument: everything else in this course happens on
@@ -45,9 +46,11 @@ a machine you cannot click around on.
 | `echo` | repeat input | essential inside scripts |
 | `man` | the manual for a command | awkward to read, and it works offline |
 
-`ls -la` is two flags worth knowing: `-l` gives permissions, size and modified
-time; `-a` shows dotfiles. Without `-a` your `.gitignore` is invisible and you
-will swear it was there.
+<Figure
+  src="/diagrams/fullstack-v3/ls-la"
+  alt="One row of ls -la output with each segment labelled: permissions, links, owner, group, size, modified date, filename."
+  caption="Without -a your .gitignore is invisible and you will swear it was there."
+/>
 
 ## The exercise
 

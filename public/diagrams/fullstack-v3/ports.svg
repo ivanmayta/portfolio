@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 192" role="img" aria-labelledby="ports-title ports-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="ports-title">Which ports you may use</title>
+  <desc id="ports-desc">Ports below 1024 are reserved for well-known services such as SSH on 22, HTTP on 80 and HTTPS on 443. Everything from 1024 to 65535 is free for your own servers, which is why development conventionally uses 3000 or 8080.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <rect x="24" y="80" width="320" height="56" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="24" y="68" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">0 – 1023  ·  SPOKEN FOR</text>
+  <rect x="376" y="80" width="240" height="56" rx="6" fill="rgba(157,76,250,0.08)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="376" y="68" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">1024 – 65535  ·  YOURS</text>
+  <text x="96" y="105" fill="#171717" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">22</text>
+  <text x="96" y="122" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">ssh</text>
+  <text x="188" y="105" fill="#171717" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">80</text>
+  <text x="188" y="122" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">http</text>
+  <text x="280" y="105" fill="#171717" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">443</text>
+  <text x="280" y="122" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">https</text>
+  <text x="440" y="105" fill="#9d4cfa" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">3000</text>
+  <text x="440" y="122" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">convention</text>
+  <text x="552" y="105" fill="#52525b" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">8080</text>
+  <text x="552" y="122" fill="#52525b" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">also fine</text>
+  <text x="24" y="172" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">You will not run out of ports. You will collide with one.</text>
+</svg>

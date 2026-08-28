@@ -56,11 +56,11 @@ and only then send it. With a stream you start at the head of the file and pipe
 it straight through. On a 1 KB file that's irrelevant; on a large one it's the
 difference between fine and falling over.
 
-<Callout label="A note on ports">
-3000 is convention for development — nothing binds to it. Some ports are already
-spoken for: **22** is SSH, **80** is HTTP, **443** is HTTPS. There are about
-65,000 of them, so you won't run out; you'll just collide.
-</Callout>
+<Figure
+  src="/diagrams/fullstack-v3/ports"
+  alt="Ports 0 to 1023 marked as reserved with SSH on 22, HTTP on 80 and HTTPS on 443; 1024 to 65535 marked as free, with 3000 highlighted."
+  caption="3000 is convention, not a rule — nothing binds to it. 8080 and 8000 are equally fine."
+/>
 
 ## Making it run
 

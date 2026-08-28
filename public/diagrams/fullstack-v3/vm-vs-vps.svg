@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 264" role="img" aria-labelledby="vm-vs-vps-title vm-vs-vps-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="vm-vs-vps-title">Virtual machine versus VPS</title>
+  <desc id="vm-vs-vps-desc">A virtual machine clones an entire computer including memory, disk and GPU, which is costly. A virtual private server takes only a share of cores and memory from a host, which is what nearly every web application runs on.</desc>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <rect x="16" y="72" width="280" height="152" rx="6" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="32" y="64" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">VIRTUAL MACHINE</text>
+  <rect x="32" y="88" width="248" height="24" rx="3" fill="#fafafa" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="44" y="104" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">cpu + memory</text>
+  <rect x="32" y="120" width="248" height="24" rx="3" fill="#fafafa" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="44" y="136" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">disk + gpu</text>
+  <rect x="32" y="152" width="248" height="24" rx="3" fill="#fafafa" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="44" y="168" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">a whole second OS</text>
+  <text x="32" y="212" fill="#171717" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">A full clone. Costly.</text>
+  <rect x="344" y="72" width="280" height="152" rx="6" fill="rgba(157,76,250,0.08)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="360" y="64" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">VPS</text>
+  <rect x="360" y="88" width="248" height="24" rx="3" fill="#fafafa" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="372" y="104" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">1 – 4 cores</text>
+  <rect x="360" y="120" width="248" height="24" rx="3" fill="#fafafa" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="372" y="136" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">a share of memory</text>
+  <rect x="360" y="152" width="248" height="24" rx="3" fill="#fafafa" stroke="rgba(23,23,23,0.12)" stroke-width="1"/>
+  <text x="372" y="168" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">your OS only</text>
+  <text x="360" y="212" fill="#171717" font-size="11" font-family="system-ui, -apple-system, Segoe UI, sans-serif">A slice. What you rent.</text>
+</svg>

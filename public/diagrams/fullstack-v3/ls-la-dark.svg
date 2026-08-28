@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 208" role="img" aria-labelledby="ls-la-dark-title ls-la-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="ls-la-dark-title">Reading a line of ls -la</title>
+  <desc id="ls-la-dark-desc">One row of ls -la output labelled segment by segment: permissions, link count, owner, group, size, modified date and filename. The -l flag produces everything up to the name; the -a flag is what makes a dotfile appear at all.</desc>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <text x="24" y="48" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.14em">ls -la</text>
+  <text x="24" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">-rw-r--r--</text>
+  <path d="M 64 96 L 64 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="64" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">permissions</text>
+  <text x="132" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">1</text>
+  <path d="M 138 96 L 138 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="138" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">links</text>
+  <text x="164" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ivan</text>
+  <path d="M 180 96 L 180 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="180" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">owner</text>
+  <text x="232" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">staff</text>
+  <path d="M 252 96 L 252 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="252" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">group</text>
+  <text x="304" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">1.2K</text>
+  <path d="M 320 96 L 320 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="320" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">size</text>
+  <text x="368" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">22 Aug 09:14</text>
+  <path d="M 412 96 L 412 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="412" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">modified</text>
+  <text x="488" y="88" fill="#ededed" font-size="13" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">.gitignore</text>
+  <path d="M 528 96 L 528 112" stroke="rgba(237,237,237,0.12)" stroke-width="1"/>
+  <text x="528" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">name</text>
+  <path d="M 24 152 L 24 158 L 452 158 L 452 152" fill="none" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="238" y="176" fill="#ededed" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">-l  gives you all of this</text>
+  <path d="M 488 152 L 488 158 L 576 158 L 576 152" fill="none" stroke="#9d4cfa" stroke-width="1"/>
+  <text x="532" y="176" fill="#9d4cfa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">-a  or it is invisible</text>
+</svg>

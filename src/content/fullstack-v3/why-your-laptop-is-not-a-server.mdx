@@ -17,8 +17,9 @@ You wrote a server. It runs on `localhost:3000`. Why not just build on that?
 
 And real setups are never one server. There are redundancies — failover, power
 outages, updates. Half the fleet goes down for a patch while the other half
-keeps answering. That whole world of server management is normally invisible to
-frontend engineers.
+keeps answering — that pattern has a name, **red/green**, and it's one of
+several update strategies. That whole world of server management is normally
+invisible to frontend engineers.
 
 ## Cloud computing is a rental agreement
 
@@ -45,13 +46,13 @@ pinning one thread to one core was foreign to them. Early cloud computing was
 bumpy for exactly this reason, and it took processors designed for
 virtualization to smooth it out.
 
-A **virtual machine** goes further — memory, hardware, GPU, a full clone of a
-computer. That's expensive, roughly what you'd expect from copying an entire
-laptop onto a disk, so it's reserved for when you genuinely need an exact copy.
+<Figure
+  src="/diagrams/fullstack-v3/vm-vs-vps"
+  alt="Side by side: a virtual machine cloning cpu, memory, disk, GPU and a second OS, against a VPS taking only a few cores, a share of memory and your OS."
+  caption="A VM is a whole second computer, which is why it costs like one. A VPS is a share of a real one."
+/>
 
-What you want instead is a **VPS**: a virtual private server. Virtual because
-it isn't real — you buy one core or four, and it's all carved out of something
-larger. Nearly every modern web application runs on one. Facebook is a notable
+Nearly every modern web application runs on a VPS. Facebook is a notable
 exception, running its own hardware, but that's a different scale of problem.
 
 <Callout label="Where this is going">
