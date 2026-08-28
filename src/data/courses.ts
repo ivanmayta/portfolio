@@ -225,31 +225,28 @@ export const courses: Course[] = [
             },
             {
                 id: "realtime-and-databases",
+                summary:
+                    "Making the connection persistent, giving the data somewhere structured to live, and encrypting the whole thing.",
                 name: "Realtime & Databases",
                 lessons: [
                     {
                         slug: "websockets",
-                        title: "Websockets",
+                        title: "WebSockets",
                         videos: ["Websockets Overview", "Using Websockets with Express", "Creating a Websocket Connection"],
                     },
                     {
-                        slug: "databases",
-                        title: "Databases",
-                        videos: ["Databases Overview"],
+                        slug: "databases-and-sqlite",
+                        title: "Databases, and SQLite",
+                        videos: ["Databases Overview", "SQLite"],
                     },
                     {
-                        slug: "sqlite",
-                        title: "SQLite",
-                        videos: ["SQLite"],
-                    },
-                    {
-                        slug: "https-with-certbot",
-                        title: "HTTPS with Certbot",
+                        slug: "http-status-codes-and-https",
+                        title: "HTTP, status codes, and HTTPS",
                         videos: ["HTTPS Overview", "Implementing HTTPS with Certbot"],
                     },
                     {
-                        slug: "supporting-http-2",
-                        title: "Supporting HTTP/2",
+                        slug: "http-2",
+                        title: "HTTP/2",
                         videos: ["Supporting HTTP/2"],
                     },
                 ],

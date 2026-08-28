@@ -1,0 +1,98 @@
+export const meta = {
+    title: "WebSockets",
+    summary:
+        "HTTP closes after every answer, so the server can never speak first. A WebSocket upgrades once and stays open both ways — two nginx headers, one library, and about fifteen lines.",
+    date: "2026-08-28",
+    minutes: 6,
+}
+
+<Figure
+  src="/diagrams/fullstack-v3/http-vs-websocket"
+  alt="HTTP opening a connection per request and closing it, against a WebSocket that upgrades once and stays open in both directions."
+  caption="A WebSocket runs over HTTP — it starts as a normal request asking to be upgraded."
+/>
+
+That's the whole idea. HTTP is one-way and it doesn't persist: the response
+arrives, the connection closes, and the server has no way to reach you again
+until you ask. A **WebSocket** is a persistent, bidirectional connection.
+
+## Two lines in nginx
+
+nginx has to know an upgrade request is coming through:
+
+```nginx
+location / {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+```
+
+```bash
+sudo nginx -t && sudo service nginx restart
+```
+
+Two headers. That's the answer to "why nginx instead of Node" from earlier —
+doing this yourself would be considerably less pleasant.
+
+## The server
+
+Express from here, because the hand-rolled `http` server gets tedious once
+things get real. It's not the newest option — Fastify has momentum — but it has
+fifteen years of answers written about it, and **being able to find the answer
+is part of the job**.
+
+```bash
+npm i express ws
+```
+
+```js
+const express = require("express")
+const { createServer } = require("http")
+const { WebSocketServer } = require("ws")
+
+const app = express()
+const server = createServer()
+
+app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"))
+server.on("request", app)
+
+const wss = new WebSocketServer({ server })
+
+wss.on("connection", (ws) => {
+    const numClients = wss.clients.size
+    console.log("clients connected", numClients)
+    wss.broadcast(`Current visitors: ${numClients}`)
+})
+
+server.listen(3000, () => console.log("server started on port 3000"))
+```
+
+`ws` exists because **you do not want to implement the WebSocket protocol by
+hand**. `wss.clients.size` is how many are connected, and `broadcast` sends to
+all of them without you iterating.
+
+## The client
+
+The only real subtlety is the protocol:
+
+```html
+<script>
+    const proto = window.location.protocol === "https:" ? "wss" : "ws"
+    const ws = new WebSocket(`${proto}://${window.location.host}`)
+    ws.onmessage = (event) => console.log(event.data)
+</script>
+```
+
+`ws` over HTTP, **`wss` over HTTPS** — the secure variant, same relationship as
+http and https, and it matters because you'll be on 443 shortly. `WebSocket` is
+built into the browser; there's nothing to install.
+
+`onmessage` is optional in principle — a WebSocket could just trigger a re-render
+and never surface data to you. Logging it is how you confirm the thing works.
+
+<Callout label="Open two tabs">
+That's the demo that lands. Open a second tab and the first one updates — no
+refresh, no polling. The server pushed. Everything real-time you've used is
+some version of this.
+</Callout>

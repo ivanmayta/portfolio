@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 232" role="img" aria-labelledby="http2-multiplexing-dark-title http2-multiplexing-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="http2-multiplexing-dark-title">What multiplexing buys you</title>
+  <desc id="http2-multiplexing-dark-desc">HTTP/1.1 opens a separate connection for every file. HTTP/2 carries all of them over a single connection at once, which is faster but costs the server more processing.</desc>
+  <defs><marker id="http2-multiplexing-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker>
+  <marker id="http2-multiplexing-dark-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9d4cfa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <text x="16" y="52" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">HTTP/1.1</text>
+  <text x="336" y="52" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">HTTP/2</text>
+  <text x="16" y="82" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">connection 1</text>
+  <path d="M 16 94 L 288 94" stroke="#a1a1aa" stroke-width="1" marker-end="url(#http2-multiplexing-dark-a)"/>
+  <rect x="96" y="82" width="112" height="13" rx="2" fill="#0c0c0e"/>
+  <text x="152" y="92" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">index.html</text>
+  <text x="16" y="126" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">connection 2</text>
+  <path d="M 16 138 L 288 138" stroke="#a1a1aa" stroke-width="1" marker-end="url(#http2-multiplexing-dark-a)"/>
+  <rect x="96" y="126" width="112" height="13" rx="2" fill="#0c0c0e"/>
+  <text x="152" y="136" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">app.js</text>
+  <text x="16" y="170" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">connection 3</text>
+  <path d="M 16 182 L 288 182" stroke="#a1a1aa" stroke-width="1" marker-end="url(#http2-multiplexing-dark-a)"/>
+  <rect x="96" y="170" width="112" height="13" rx="2" fill="#0c0c0e"/>
+  <text x="152" y="180" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">style.css</text>
+  <text x="336" y="82" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">one connection</text>
+  <path d="M 336 138 L 616 138" stroke="#9d4cfa" stroke-width="2" marker-end="url(#http2-multiplexing-dark-b)"/>
+  <rect x="348" y="102" width="84" height="18" rx="3" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1"/>
+  <text x="390" y="115" fill="#ededed" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">index.html</text>
+  <path d="M 390 120 L 390 132" stroke="#9d4cfa" stroke-width="1"/>
+  <rect x="440" y="102" width="84" height="18" rx="3" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1"/>
+  <text x="482" y="115" fill="#ededed" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">app.js</text>
+  <path d="M 482 120 L 482 132" stroke="#9d4cfa" stroke-width="1"/>
+  <rect x="532" y="102" width="84" height="18" rx="3" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1"/>
+  <text x="574" y="115" fill="#ededed" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">style.css</text>
+  <path d="M 574 120 L 574 132" stroke="#9d4cfa" stroke-width="1"/>
+  <text x="16" y="212" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Faster, and more CPU. Not automatically the right call.</text>
+</svg>

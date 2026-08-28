@@ -1,0 +1,46 @@
+export const meta = {
+    title: "HTTP/2",
+    summary:
+        "HTTP/1.1 opens one connection per file. HTTP/2 carries them all over one — and enabling it is a single word in your nginx config.",
+    date: "2026-08-28",
+    minutes: 2,
+}
+
+<Figure
+  src="/diagrams/fullstack-v3/http2-multiplexing"
+  alt="HTTP/1.1 using a separate connection per file, against HTTP/2 carrying all three files over one connection."
+  caption="This is called multiplexing — many streams sharing one connection."
+/>
+
+**HTTP/1.1** makes an independent connection for every file. `index.html` is a
+request and a response. `app.js` is another. `style.css` another. It works, and
+it's what most of the internet still runs on.
+
+**HTTP/2 multiplexes**: several things at once over one connection, which is
+usually faster.
+
+So why isn't it universal? **It costs more CPU** — someone has to multiplex and
+demultiplex all those streams. For a site this size it's free money; at scale
+it's a trade you make on purpose.
+
+## Enabling it
+
+The easiest change in the entire course. Find the `listen` lines certbot added
+for 443 and add one word:
+
+```nginx
+listen 443 ssl http2;
+listen [::]:443 ssl http2;
+```
+
+```bash
+sudo nginx -t
+sudo service nginx restart
+```
+
+<Callout label="Confirm it">
+Open devtools, go to the Network tab, and right-click the column headers to add
+**Protocol**. It'll now say `h2` instead of `http/1.1`. You'll also see the
+WebSocket sitting there as `101 switching protocols` on `wss` — the upgrade
+status code from the previous lesson, in the wild.
+</Callout>
