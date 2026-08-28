@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 256" role="img" aria-labelledby="ssh-keys-dark-title ssh-keys-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="ssh-keys-dark-title">How an SSH key pair works</title>
+  <desc id="ssh-keys-dark-desc">You keep the private key and never send it. The public key sits on the server. Messages encrypted with the public key can only be opened by the private key, so anyone intercepting the traffic in between reads nothing useful.</desc>
+  <defs><marker id="ssh-keys-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <path d="M 192 96 L 432 96" stroke="#a1a1aa" stroke-width="1" marker-end="url(#ssh-keys-dark-a)"/>
+  <rect x="228" y="72" width="168" height="14" rx="2" fill="#0c0c0e"/>
+  <text x="312" y="83" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">encrypted with the public key</text>
+  <path d="M 436 136 L 196 136" stroke="#a1a1aa" stroke-width="1" marker-end="url(#ssh-keys-dark-a)"/>
+  <rect x="232" y="112" width="164" height="14" rx="2" fill="#0c0c0e"/>
+  <text x="314" y="123" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">only your private key opens it</text>
+  <rect x="16" y="64" width="176" height="96" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="104" y="100" fill="#ededed" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">you</text>
+  <text x="104" y="120" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">private key</text>
+  <text x="104" y="136" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">never leaves this machine</text>
+  <rect x="440" y="64" width="184" height="96" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="532" y="100" fill="#ededed" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">your server</text>
+  <text x="532" y="120" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">holds your public key</text>
+  <text x="532" y="136" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">post it anywhere you like</text>
+  <path d="M 200 172 L 200 180 L 428 180 L 428 172" fill="none" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="314" y="198" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">anyone listening here reads gibberish</text>
+  <text x="16" y="234" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Shout the message in the street. Only one person can read it.</text>
+</svg>

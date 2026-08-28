@@ -1,0 +1,63 @@
+export const meta = {
+    title: "Hashing with salt",
+    summary:
+        "Longer hashes buy time, not safety — the rainbow table just gets bigger. A random salt per user is what actually breaks it, and rolling your own crypto is what breaks you.",
+    date: "2026-08-28",
+    minutes: 4,
+}
+
+MD5 gives you 33 characters. SHA-1 gives 41. SHA-256 gives 65 — currently the
+gold standard, and enough entropy that storing every precomputed answer starts
+to blow up memory.
+
+But note what hasn't changed: **you and I still get the same output for the same
+password.** A longer hash makes the rainbow table more expensive, not
+impossible. Tables of common SHA-1 patterns — `password`, `p@ssword`,
+`password1` — already exist. There are people who do this full time.
+
+## The salt
+
+A salt is just randomness: a random number, unique to that record at the time it
+was created. You take the input, add the salt, and hash the pair.
+
+<Figure
+  src="/diagrams/fullstack-v3/salted-hash"
+  alt="Three people with the same password, each combined with a different random salt, producing three unrelated SHA-256 digests."
+  caption="These are real SHA-256 digests of password plus each salt. Nothing about them looks related."
+/>
+
+That's the whole trick, and it costs almost nothing to implement. The password
+becomes unrecognisable, and no one can build a table for it — because they'd
+need a separate table per salt.
+
+The salt itself can be anything random. `Math.random()` run through a hash
+function, combined with the input, and passed to the cryptographic hash.
+
+## Things people still get wrong
+
+Jem spends a long time here for a reason: this is where breaches come from.
+
+- **Storing passwords in plain text.** Still happens. Constantly.
+- **"I hashed it with MD5."** You've now seen why that isn't security.
+- **"I'll just MD5 it ten times."** Computers do that trivially too. Repetition
+  isn't entropy.
+
+The only real answer is a strong cryptographic function with a **random salt per
+user**. Then even if someone takes the whole password database, it's gibberish —
+they can't reverse the hash and they don't have the salts.
+
+<Callout label="Do not roll your own">
+Writing your own hash function feels approachable: shift some bits, add a magic
+number, it looks random. It isn't. Run any mathematical function long enough and
+a curve emerges — that's elliptic-curve territory, and genuine randomness is a
+hard enough problem to fill a university course. Use the standard library.
+</Callout>
+
+## Why a cryptographic hash is different
+
+A plain hash function can often be reversed if you know the function — MD5
+particularly easily. A *cryptographic* hash is built so that it can't be, and
+that's the distinction the word "cryptographic" is carrying.
+
+MD5 isn't useless, by the way. It's still fine for **verifying a file arrived
+intact** — hash it on both ends and compare. Just never for passwords.
