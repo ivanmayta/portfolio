@@ -1,0 +1,67 @@
+export const meta = {
+    title: "Operating systems, and why Ubuntu",
+    summary:
+        "Two families: Windows and Unix. Your Mac and your droplet are cousins, which is why the commands transfer. A Unix system is programs, a kernel, and a rule — everything is a file or a process.",
+    date: "2026-08-28",
+    minutes: 4,
+}
+
+There are essentially two families. **Windows**, which for servers means Windows
+Server and nothing much else — you *could* run a consumer build, but don't. And
+**Unix**, which has every flavour you can imagine.
+
+<Figure
+  src="/diagrams/fullstack-v3/unix-family"
+  alt="Unix branching into Linux, which leads to Ubuntu on the droplet, and into BSD, which leads to FreeBSD and then macOS on the laptop."
+  caption="Solaris is the third Unix branch. Windows is its own family and shares none of this."
+/>
+
+This is the answer to a question you may not have thought to ask: why do the
+commands you just learned on your laptop work on a server you haven't bought
+yet? Because macOS and Ubuntu are both Unix underneath.
+
+## Which Linux
+
+Linux is the friendliest, most accessible branch, with far more built-in
+commands — and by far the most versions. Debian, CentOS, **Ubuntu**, Fedora, Red
+Hat, Alpine, Arch. There's a flavour for whatever you're doing, because it's
+endlessly customisable.
+
+Pick Ubuntu. It's the most common and most popular, it's a safe bet, and you
+won't hit anything that isn't already documented.
+
+Most of them are open source and free — Red Hat being the exception. Which is
+worth sitting with for a second: an entire category of foundational software,
+built collaboratively, given away.
+
+## What an operating system is made of
+
+In Unix terms, three parts nested inside each other:
+
+- **Programs and utilities** — `mkdir`, `rmdir`, `vi`. These *are* the OS as far
+  as you're concerned.
+- **The kernel** — the part that talks to the hardware. Going in there is
+  hardware programming, which is computer engineering rather than software
+  engineering. We stay in user land.
+- **The shell** in between, which you already met.
+
+<Callout label="The rule underneath">
+In Unix, **everything is either a file or a process.** That's the whole model.
+The utilities are files, they follow the POSIX standard with standard in,
+standard out and standard error, and that shared contract is why disparate tools
+compose so well on a phone, a Mac, or a Fedora box alike.
+</Callout>
+
+## Finishing the droplet
+
+Back on DigitalOcean: Ubuntu, LTS, 64-bit, and the **smallest, cheapest**
+droplet size. You are not building Netflix 2.0 today and the compute doesn't
+matter.
+
+The cheapest option isn't in every data centre — the $4 tier shows up in New
+York but not always in San Francisco, so if cost is what you care about, pick
+the region that has it. Expect somewhere around $4–6 a month.
+
+Which leaves one question. You have a machine. How do you get into it?
+
+You could use a password. You're about to see why you won't.

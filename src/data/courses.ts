@@ -85,15 +85,18 @@ export const courses: Course[] = [
             {
                 id: "operating-systems",
                 name: "Operating Systems",
+                summary:
+                    "Picking the OS, then the long way round to logging in: why passwords lose, what hashing is, and how SSH keys work.",
+                // Slides 53-56 the OS · 57+ passwords, hashing and SSH.
                 lessons: [
                     {
                         slug: "operating-systems",
-                        title: "Operating systems",
+                        title: "Operating systems, and why Ubuntu",
                         videos: ["Operating Systems"],
                     },
                     {
-                        slug: "security-and-hashing",
-                        title: "Security and hashing",
+                        slug: "why-not-passwords-and-what-hashing-is",
+                        title: "Why not passwords, and what hashing is",
                         videos: ["Security & Hashing"],
                     },
                     {

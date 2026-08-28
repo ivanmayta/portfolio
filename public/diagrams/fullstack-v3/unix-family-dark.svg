@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 264" role="img" aria-labelledby="unix-family-dark-title unix-family-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="unix-family-dark-title">Why your Mac and your droplet agree</title>
+  <desc id="unix-family-dark-desc">Unix branches into Linux, which leads to Ubuntu on the server, and into BSD, which leads to FreeBSD and then macOS on the laptop. Both descend from the same root, which is why the same commands work in both places.</desc>
+  <defs><marker id="unix-family-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <path d="M 136 112 L 156 112 Q 164 112 164 104 L 164 80 Q 164 72 172 72 L 192 72" fill="none" stroke="#a1a1aa" stroke-width="1" marker-end="url(#unix-family-dark-a)"/>
+  <path d="M 136 136 L 156 136 Q 164 136 164 144 L 164 176 Q 164 184 172 184 L 192 184" fill="none" stroke="#a1a1aa" stroke-width="1" marker-end="url(#unix-family-dark-a)"/>
+  <path d="M 320 72 L 368 72" fill="none" stroke="#a1a1aa" stroke-width="1" marker-end="url(#unix-family-dark-a)"/>
+  <path d="M 320 184 L 368 184" fill="none" stroke="#a1a1aa" stroke-width="1" marker-end="url(#unix-family-dark-a)"/>
+  <path d="M 496 184 L 520 184" fill="none" stroke="#a1a1aa" stroke-width="1" marker-end="url(#unix-family-dark-a)"/>
+  <rect x="16" y="96" width="120" height="56" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="76" y="129" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">unix</text>
+  <rect x="192" y="48" width="128" height="48" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="256" y="77" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">linux</text>
+  <rect x="192" y="160" width="128" height="48" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="256" y="189" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">BSD</text>
+  <rect x="368" y="44" width="128" height="56" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="432" y="70" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">ubuntu</text>
+  <text x="432" y="86" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">your droplet</text>
+  <rect x="368" y="160" width="128" height="48" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="432" y="189" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">freeBSD</text>
+  <rect x="520" y="156" width="104" height="56" rx="6" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="572" y="182" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">macOS</text>
+  <text x="572" y="198" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">your laptop</text>
+  <text x="16" y="244" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Same root. That is the whole reason the commands transfer.</text>
+</svg>

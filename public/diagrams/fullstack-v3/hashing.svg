@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 264" role="img" aria-labelledby="hashing-title hashing-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="hashing-title">Why a plain hash is not enough</title>
+  <desc id="hashing-desc">Three passwords each run through the same MD5 hash function and each produce a fixed digest. Because the same input always gives the same output, those digests can be precomputed for every common word and stored in a lookup table.</desc>
+  <defs><marker id="hashing-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#52525b"/></marker></defs>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <rect x="232" y="64" width="144" height="128" rx="6" fill="rgba(157,76,250,0.08)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="304" y="122" fill="#171717" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">hash function</text>
+  <text x="304" y="140" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">md5</text>
+  <rect x="428" y="64" width="196" height="128" rx="6" fill="none" stroke="#9d4cfa" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="428" y="56" fill="#9d4cfa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">RAINBOW TABLE</text>
+  <rect x="16" y="74" width="140" height="32" rx="4" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="86" y="94" fill="#171717" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">password</text>
+  <path d="M 156 90 L 224 90" stroke="#52525b" stroke-width="1" marker-end="url(#hashing-a)"/>
+  <path d="M 376 90 L 420 90" stroke="#52525b" stroke-width="1" marker-end="url(#hashing-a)"/>
+  <text x="440" y="94" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">5f4dcc3b5aa765…</text>
+  <rect x="16" y="118" width="140" height="32" rx="4" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="86" y="138" fill="#171717" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">P@ssw0rd</text>
+  <path d="M 156 134 L 224 134" stroke="#52525b" stroke-width="1" marker-end="url(#hashing-a)"/>
+  <path d="M 376 134 L 420 134" stroke="#52525b" stroke-width="1" marker-end="url(#hashing-a)"/>
+  <text x="440" y="138" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">161ebd7d45089b…</text>
+  <rect x="16" y="162" width="140" height="32" rx="4" fill="#f2f2f3" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="86" y="182" fill="#171717" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">hunter2</text>
+  <path d="M 156 178 L 224 178" stroke="#52525b" stroke-width="1" marker-end="url(#hashing-a)"/>
+  <path d="M 376 178 L 420 178" stroke="#52525b" stroke-width="1" marker-end="url(#hashing-a)"/>
+  <text x="440" y="182" fill="#52525b" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">2ab96390c7dbe3…</text>
+  <text x="16" y="234" fill="#171717" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Same input, same output, always — so someone precomputed them all.</text>
+</svg>
