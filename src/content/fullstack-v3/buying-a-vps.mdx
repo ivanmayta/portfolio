@@ -1,0 +1,50 @@
+export const meta = {
+    title: "Buying a VPS",
+    summary:
+        "About $5 a month buys a blank machine in a data centre. Two choices matter — the region, and picking the LTS build of Ubuntu over anything newer.",
+    date: "2026-08-28",
+    minutes: 3,
+}
+
+Time to stop making a server and start renting one. The course uses
+**DigitalOcean**, which calls its servers *droplets*. AWS calls the equivalent
+EC2, which is less fun.
+
+The reason isn't that DigitalOcean is better — it's that AWS is much more
+complex and offers a great deal you don't need here. You'd be configuring Route
+53 and a pile of adjacent services to do something DigitalOcean does in one
+form. Its UI also makes it harder to shoot yourself in the foot, which is easy
+to do when creating or modifying a server.
+
+<Callout label="Turn it off">
+These run around $5 a month, and new accounts get credits. Shut the server down
+when you're done with it — otherwise you'll find out how the billing works the
+hard way.
+</Callout>
+
+## The choices that matter
+
+| | | |
+|---|---|---|
+| Region | closest to your **users** | not closest to you — unless it's a dev server, then put it near the developers |
+| Data centre | any within the region | DigitalOcean even reminds you of the rule on screen |
+| OS | **Ubuntu, 64-bit LTS** | the one you have to live with |
+
+Region is the one people get backwards. You're developing here, but you're
+serving *them*. A high-scale application ends up with servers in every region
+and good routing to send each user to the nearest one.
+
+## Why LTS
+
+LTS is **long-term support**, and it is the version you want on a server.
+
+The pull toward the bleeding edge is real and you should resist it. Think like
+an enterprise developer instead: newest is buggiest, and the bugs are the ones
+nobody has hit yet. What you want is the most recent version that is also the
+slowest-moving and most stable.
+
+That's the rule for enterprise computing generally — unless you specifically
+need something only the newer release has.
+
+You now own a small piece of internet real estate. Next is working out how to
+get into it.

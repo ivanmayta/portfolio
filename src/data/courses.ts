@@ -61,20 +61,18 @@ export const courses: Course[] = [
             {
                 id: "server",
                 name: "Server",
+                summary:
+                    "What a server actually is, why your laptop cannot be one, and renting a real one by the month.",
+                // Slides 43-46 the node server · 47+ cloud, virtualization and the VPS.
                 lessons: [
                     {
-                        slug: "servers",
-                        title: "Servers",
-                        videos: ["Servers"],
+                        slug: "what-a-server-is-and-writing-one",
+                        title: "What a server is, and writing one in Node",
+                        videos: ["Servers", "Create a Simple Node.js Server"],
                     },
                     {
-                        slug: "create-a-simple-node-js-server",
-                        title: "Create a simple Node.js server",
-                        videos: ["Create a Simple Node.js Server"],
-                    },
-                    {
-                        slug: "server-management",
-                        title: "Server management",
+                        slug: "why-your-laptop-is-not-a-server",
+                        title: "Why your laptop isn't a server",
                         videos: ["Server Management"],
                     },
                     {

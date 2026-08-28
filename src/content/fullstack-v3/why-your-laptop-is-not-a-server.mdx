@@ -1,0 +1,60 @@
+export const meta = {
+    title: "Why your laptop isn't a server",
+    summary:
+        "Availability, collaboration and scale each rule out running it locally. Cloud computing is renting server time, virtualization is what makes it cheap, and a VPS is your slice.",
+    date: "2026-08-28",
+    minutes: 4,
+}
+
+You wrote a server. It runs on `localhost:3000`. Why not just build on that?
+
+- **Availability.** The OS wants to update. You close the lid. You want the
+  memory back for a game. A server's core tenet is being up 100% of the time,
+  and if your page is down it's costing you users and money.
+- **Collaboration.** How does anyone else run it? Copy the file around and
+  iterate in parallel? That gets messy immediately.
+- **Scale.** Buy more laptops?
+
+And real setups are never one server. There are redundancies — failover, power
+outages, updates. Half the fleet goes down for a patch while the other half
+keeps answering. That whole world of server management is normally invisible to
+frontend engineers.
+
+## Cloud computing is a rental agreement
+
+Ten years ago you could get away with a server rack in the company basement, and
+plenty of firms still do — Goldman Sachs and the like keep them in the
+fire-resistant part of the building, because servers run hot.
+
+What replaced it isn't complicated, despite the branding. **Cloud computing is
+the idea that there's a giant pile of servers somewhere and you can rent time on
+it.** AWS, DigitalOcean, Rackspace. That's the whole concept — you're
+outsourcing to people who do this better than you, instead of hiring a sysadmin.
+
+## Virtualization is the trick that made it cheap
+
+<Figure
+  src="/diagrams/fullstack-v3/virtualization"
+  alt="One physical 32-core machine divided into eight virtual private servers, with one highlighted as yours."
+  caption="Twenty years ago you rented the whole machine whether you needed it or not. Now the machine is divided and you take a slice."
+/>
+
+Dividing a machine's resources into virtual computers sounds obvious now, and it
+was genuinely hard. Computers were built for multiprocessing and multithreading;
+pinning one thread to one core was foreign to them. Early cloud computing was
+bumpy for exactly this reason, and it took processors designed for
+virtualization to smooth it out.
+
+A **virtual machine** goes further — memory, hardware, GPU, a full clone of a
+computer. That's expensive, roughly what you'd expect from copying an entire
+laptop onto a disk, so it's reserved for when you genuinely need an exact copy.
+
+What you want instead is a **VPS**: a virtual private server. Virtual because
+it isn't real — you buy one core or four, and it's all carved out of something
+larger. Nearly every modern web application runs on one. Facebook is a notable
+exception, running its own hardware, but that's a different scale of problem.
+
+<Callout label="Where this is going">
+Next: buy one, choose its operating system, and work out how to log in — which
+turns out to be the interesting part.
+</Callout>

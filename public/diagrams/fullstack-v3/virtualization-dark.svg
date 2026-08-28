@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 248" role="img" aria-labelledby="virtualization-dark-title virtualization-dark-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="virtualization-dark-title">What a VPS actually is</title>
+  <desc id="virtualization-dark-desc">One physical machine with many cores is divided into several virtual private servers, and you rent one of the slices rather than the whole machine.</desc>
+  <defs><marker id="virtualization-dark-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a1a1aa"/></marker></defs>
+  <rect width="100%" height="100%" fill="#0c0c0e"/>
+  <rect x="16" y="76" width="176" height="112" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="104" y="124" fill="#ededed" font-size="13" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">one real machine</text>
+  <text x="104" y="144" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">32 cores, in a data centre</text>
+  <path d="M 192 132 L 264 132" stroke="#a1a1aa" stroke-width="1" marker-end="url(#virtualization-dark-a)"/>
+  <rect x="196" y="108" width="64" height="14" rx="2" fill="#0c0c0e"/>
+  <text x="228" y="119" fill="#a1a1aa" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">sliced up</text>
+  <text x="280" y="64" fill="#71717a" font-size="9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.12em">VIRTUAL PRIVATE SERVERS</text>
+  <rect x="280" y="88" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="368" y="88" width="76" height="44" rx="4" fill="rgba(157,76,250,0.14)" stroke="#9d4cfa" stroke-width="1.2"/>
+  <text x="406" y="109" fill="#9d4cfa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">yours</text>
+  <text x="406" y="122" fill="#a1a1aa" font-size="8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">$5/mo</text>
+  <rect x="456" y="88" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="544" y="88" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="280" y="144" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="368" y="144" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="456" y="144" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <rect x="544" y="144" width="76" height="44" rx="4" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
+  <text x="16" y="222" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">You aren't renting a computer. You're renting a slice of one.</text>
+</svg>
