@@ -169,10 +169,12 @@ export const courses: Course[] = [
             {
                 id: "git",
                 name: "Git",
+                summary:
+                    "Getting the code off the server and into a repository, so the server stops being your editor.",
                 lessons: [
                     {
                         slug: "version-control-and-git",
-                        title: "Version control and git",
+                        title: "Version control, and getting off the server",
                         videos: ["Git Exercise", "Version Control & Git"],
                     },
                 ],

@@ -1,0 +1,93 @@
+export const meta = {
+    title: "Version control, and getting off the server",
+    summary:
+        "Put the repo on GitHub so you can stop editing over SSH. A second SSH key, an `~/.ssh/config` entry, and the four commands that get you unstuck when it doesn't work.",
+    date: "2026-08-28",
+    minutes: 4,
+}
+
+Two facts before the useful part, because they close loops from earlier
+sections. **Git identifies everything by SHA-1 hash** — the same hashing you
+just spent a section on, showing up in the tool you use daily. And **git and
+Linux were both written by Linus Torvalds**, which is a remarkable output for
+one career.
+
+## The point of this step
+
+Right now every change to your app means `vi` over SSH. That's fine for one
+config file and miserable for actual work.
+
+<Figure
+  src="/diagrams/fullstack-v3/git-loop"
+  alt="Your laptop pushing to GitHub and the server pulling from GitHub, with the first push having come from the server."
+  caption="Push once from the server to seed the repo, clone it locally, and never write code over SSH again."
+/>
+
+## Setting it up
+
+Your server needs its own key for GitHub — same tool, new key:
+
+```bash
+cd ~                              # not inside the repo
+ssh-keygen                        # name it gh_key
+```
+
+<Callout label="Generate keys from home">
+Run `ssh-keygen` inside your project directory and the key lands there — and
+then it's one careless `git add .` from being committed. `cd ~` first.
+</Callout>
+
+Copy the **public** half (`gh_key.pub`) into GitHub under *Settings → SSH and
+GPG keys*. Same move as DigitalOcean.
+
+Then point your server at the repo and tell SSH which key to use for GitHub:
+
+```bash
+git remote add origin git@github.com:you/your-repo.git
+vi ~/.ssh/config
+```
+
+```
+Host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/gh_key
+```
+
+```bash
+git push origin main
+```
+
+<Callout label="The mistake Jem made on camera">
+He opened that config with `sudo` and spent an embarrassing amount of time on
+`Permission denied (publickey)`. It's a file in your own home directory — it is
+yours. Adding `sudo` gave it to root, and SSH stopped reading it.
+</Callout>
+
+## When it doesn't work
+
+| | |
+|---|---|
+| `ssh -Tv git@github.com` | test the connection and print everything SSH is doing |
+| `:w !sudo tee %` | save a read-only file you opened in vim without `sudo` |
+| `pkill node` | kill a process that won't die from `Ctrl+C` |
+
+The first one is the one that saves you. `Permission denied (publickey)` tells
+you nothing on its own; `-Tv` tells you which key was offered and why it was
+refused.
+
+The second is the fix for the trap from the nginx lesson: `tee` reads standard
+in and writes standard out, `%` is the current filename, so you're opening a
+privileged process to write the buffer you already edited. Most people alias it.
+
+`pkill` is the one you'll actually use most often — some process eating memory
+that you can't trace back to a terminal.
+
+## What this unlocks
+
+Clone the repo on your laptop, work in your real editor, push, then pull on the
+server. The server becomes somewhere you *deploy* to rather than somewhere you
+*write* in.
+
+Which is a decent place to stop. You bought a domain, bought a server, hardened
+it, put nginx in front of a Node app, and kept it alive across reboots — all by
+hand, all understood. Everything after this is refinement.
