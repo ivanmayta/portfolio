@@ -1,9 +1,9 @@
 export const meta = {
     title: "Editing files with Vim",
     summary:
-        "Vim has three modes and you land in the one that ignores your typing. Learn `i`, `ESC` and `:wq` and you can edit a file on any server — the rest is optional forever.",
+        "Vim has three modes and you land in the one that ignores your typing. `i`, `ESC`, `:wq` to save and `:q!` to bail — that's enough to edit a file on any server, and the rest is optional forever.",
     date: "2026-08-28",
-    minutes: 3,
+    minutes: 4,
 }
 
 You already have VS Code, and it is better at almost everything. The reason to
@@ -23,7 +23,8 @@ commands, not text.
 />
 
 - **normal** — where Vim opens. Keys are navigation and commands.
-- **insert** — `i`. Now you're typing text.
+- **insert** — `i`. Now you're typing text. Vim prints `-- INSERT --` at the
+  bottom, which is how you check where you are.
 - **command** — `:`. Saving, quitting, searching.
 
 `ESC` returns to normal from anywhere. That single key is most of what saves you.
@@ -34,26 +35,39 @@ commands, not text.
 cd ~
 mkdir temp
 cd temp
-vi test         # or: touch test && vi test
+vi test         # vim test works too — same editor
 ```
 
-Then: `i` to start typing, write a few lines, `ESC` to leave insert mode, and
-`:wq` to write and quit.
+Then `i`, write a few lines, `ESC`, and `:wq` to write and quit. `vi test`
+creates the file if it doesn't exist, so `touch` first is optional.
+
+## The four keys that get you out
+
+| | |
+|---|---|
+| `ESC` | back to normal mode, from anywhere |
+| `u` | undo the last change (in normal mode) |
+| `:wq` | write and quit |
+| `:q!` | quit and throw the changes away |
+
+That last one is the escape hatch. Plain `:q` refuses when you have unsaved
+changes; the `!` means *do it anyway*. You will need it the first time you open
+a file by accident.
 
 <Callout label="Stuck in Vim">
-`ESC`, then `:wq`. It is the answer to the oldest joke in the profession, and
-it works from any state.
+`ESC`, then `:wq` to keep your changes or `:q!` to discard them. It is the
+answer to the oldest joke in the profession, and it works from any state.
 </Callout>
-
-`vi test` creates the file if it doesn't exist, so the `touch` is optional.
 
 ## Why bother past that
 
 Jem's argument isn't speed for its own sake — it's that once you stop reaching
-for the mouse, both hands stay on the keyboard. That is why you see people
-moving through files faster than you can click.
+for the mouse, both hands stay on the keyboard. The people he's seen use Vim at
+work are genuinely fast, but he's blunt about the cost: it takes a long time and
+real dedication, because it isn't a natural way to work for most people.
 
-This lesson stays at the surface on purpose: enough to open a file on a server,
-change a line, and get out. Vim configuration is a rabbit hole with no bottom,
-and the course links [Vim Fundamentals](https://frontendmasters.com/courses/vim-fundamentals/)
-and [openvim.com](https://www.openvim.com/) if you want to fall into it.
+So this lesson stays at the surface deliberately — about ten minutes, enough to
+open a file on a server, change a line, and get out. If you want the rabbit
+hole, the course points at ThePrimeagen's four-hour
+[Vim Fundamentals](https://frontendmasters.com/courses/vim-fundamentals/) and
+[openvim.com](https://www.openvim.com/).

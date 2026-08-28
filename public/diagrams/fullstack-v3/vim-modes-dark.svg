@@ -26,6 +26,6 @@
   <text x="320" y="150" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">where you land</text>
   <rect x="464" y="96" width="160" height="72" rx="6" fill="#141416" stroke="rgba(161,161,170,0.28)" stroke-width="1"/>
   <text x="544" y="130" fill="#ededed" font-size="14" font-weight="600" font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">command</text>
-  <text x="544" y="150" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">save, quit, search</text>
-  <text x="16" y="230" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Lost? ESC gets you to normal from anywhere. Then :wq writes and quits.</text>
+  <text x="544" y="150" fill="#a1a1aa" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">:wq  :q!  /search</text>
+  <text x="16" y="230" fill="#ededed" font-size="15" font-style="italic" font-family="Georgia, Times New Roman, serif">Lost? ESC reaches normal from anywhere. Then :wq to save, :q! to throw it away.</text>
 </svg>
