@@ -39,6 +39,7 @@ export const courses: Course[] = [
                 name: "Command Line",
                 summary:
                     "Talking to the operating system directly — the terminal, the editor that is always installed, and the shell underneath both.",
+                // Slides 26-32 command line · 34-38 vim · 39+ shells.
                 lessons: [
                     {
                         slug: "terminal-and-the-commands-that-matter",

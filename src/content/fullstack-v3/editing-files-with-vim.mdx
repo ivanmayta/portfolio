@@ -1,0 +1,59 @@
+export const meta = {
+    title: "Editing files with Vim",
+    summary:
+        "Vim has three modes and you land in the one that ignores your typing. Learn `i`, `ESC` and `:wq` and you can edit a file on any server — the rest is optional forever.",
+    date: "2026-08-28",
+    minutes: 3,
+}
+
+You already have VS Code, and it is better at almost everything. The reason to
+learn Vim isn't that it beats your editor — it's that it is *already installed*
+on the server you just rented, and VS Code is not.
+
+## Three modes, and you start in the wrong one
+
+This is the whole reason Vim feels broken the first time. You open a file, type,
+and nothing appears — because you are in **normal** mode, where letters are
+commands, not text.
+
+<Figure
+  src="/diagrams/fullstack-v3/vim-modes"
+  alt="Three boxes — insert, normal and command — with i and Escape between normal and insert, and colon and Escape between normal and command."
+  caption="Normal is the hub. Every mode change goes through it, and ESC always gets you back."
+/>
+
+- **normal** — where Vim opens. Keys are navigation and commands.
+- **insert** — `i`. Now you're typing text.
+- **command** — `:`. Saving, quitting, searching.
+
+`ESC` returns to normal from anywhere. That single key is most of what saves you.
+
+## The exercise
+
+```bash
+cd ~
+mkdir temp
+cd temp
+vi test         # or: touch test && vi test
+```
+
+Then: `i` to start typing, write a few lines, `ESC` to leave insert mode, and
+`:wq` to write and quit.
+
+<Callout label="Stuck in Vim">
+`ESC`, then `:wq`. It is the answer to the oldest joke in the profession, and
+it works from any state.
+</Callout>
+
+`vi test` creates the file if it doesn't exist, so the `touch` is optional.
+
+## Why bother past that
+
+Jem's argument isn't speed for its own sake — it's that once you stop reaching
+for the mouse, both hands stay on the keyboard. That is why you see people
+moving through files faster than you can click.
+
+This lesson stays at the surface on purpose: enough to open a file on a server,
+change a line, and get out. Vim configuration is a rabbit hole with no bottom,
+and the course links [Vim Fundamentals](https://frontendmasters.com/courses/vim-fundamentals/)
+and [openvim.com](https://www.openvim.com/) if you want to fall into it.

@@ -1,19 +1,23 @@
-import { ArrowLeftIcon } from "lucide-react"
 import Link from "next/link"
 
 export default function NotFound() {
     return (
-        <div className="flex flex-1 flex-col items-center justify-center gap-4">
-            <h1 className="text-4xl font-bold">Not Found</h1>
-            <p className="text-lg">
-                The page you are looking for does not exist.
+        <div className="flex flex-1 flex-col items-center justify-center gap-5 py-32 text-center">
+            <p className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-subtle">
+                404
+            </p>
+            <h2 className="font-serif text-[36px] leading-[1.08] tracking-[-0.015em]">
+                Nothing here.
+            </h2>
+            <p className="max-w-[380px] text-[15.5px] leading-[1.62] text-muted text-pretty">
+                This page doesn&apos;t exist — or it did, and the link outlived
+                it.
             </p>
             <Link
                 href="/"
-                className="text-blue-500 hover:underline flex items-center gap-2"
+                className="font-mono text-[11.5px] text-subtle hover:text-accent transition-colors"
             >
-                <ArrowLeftIcon className="w-4 h-4" />
-                Go back to the home page
+                ← back home
             </Link>
         </div>
     )
