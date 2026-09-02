@@ -51,10 +51,10 @@ export default async function CoursePage({
             </nav>
 
             <section className="pb-8">
-                <h2 className="font-serif text-[34px] sm:text-[44px] leading-[1.08] tracking-[-0.015em] text-pretty">
+                <h1 className="text-[27px] sm:text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-pretty">
                     {course.name}
-                </h2>
-                <p className="mt-5 max-w-[540px] text-base leading-[1.62] text-muted text-pretty">
+                </h1>
+                <p className="mt-4 max-w-[540px] text-base leading-[1.62] text-muted text-pretty">
                     {course.summary}
                 </p>
                 <div className="flex items-center gap-3.5 flex-wrap mt-6 font-mono text-[10.5px] uppercase tracking-[0.08em] text-dim">

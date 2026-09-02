@@ -7,11 +7,11 @@ import { instrumentSerif, jetbrainsMono, publicSans } from "@/font/fonts"
 export const metadata: Metadata = {
     title: "iverse.dev",
     description:
-        "Software Developer | Modern technologies | Building modern web experiences",
+        "Web products for import logistics, ad reporting, and the internal software around them.",
     openGraph: {
-        title: "iverse.dev | Software Developer",
+        title: "iverse.dev",
         description:
-            "Software Developer | Modern technologies | Building modern web experiences. Let's build something amazing.",
+            "Web products for import logistics, ad reporting, and the internal software around them. Built and maintained from Perú.",
         url: "https://iverse.dev",
         siteName: "iverse.dev",
         images: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         creator: "@iversedev",
-        title: "iverse.dev | Software Developer",
+        title: "iverse.dev",
         description:
-            "Software Developer | Modern technologies | Building modern web experiences. Let's connect!",
+            "Web products for import logistics, ad reporting, and the internal software around them.",
         images: ["https://iverse.dev/openg.webp"],
     },
 }
@@ -43,9 +43,16 @@ export default async function RootLayout({
     return (
         <html
             lang="en"
+            suppressHydrationWarning
             className={`${instrumentSerif.variable} ${publicSans.variable} ${jetbrainsMono.variable}`}
         >
             <body className="antialiased flex flex-col max-w-[760px] mx-auto min-h-screen px-6">
+                {/* Applies the theme the /cli `theme` command stored, before paint. */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`,
+                    }}
+                />
                 <Header />
                 <main className="flex flex-col flex-1">{children}</main>
                 <Footer />

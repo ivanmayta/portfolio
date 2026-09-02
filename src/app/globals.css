@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/*
+ * `dark:` follows the same rule as the palette below — the system preference,
+ * unless `data-theme` on <html> overrides it.
+ */
+@custom-variant dark {
+    @media (prefers-color-scheme: dark) {
+        &:where(html:not([data-theme="light"]), html:not([data-theme="light"]) *) {
+            @slot;
+        }
+    }
+    &:where(html[data-theme="dark"], html[data-theme="dark"] *) {
+        @slot;
+    }
+}
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
@@ -12,10 +27,16 @@
     --faint: #c4c4c8;
     --accent: #9d4cfa;
     --signal: #65a30d;
+    color-scheme: light;
 }
 
+/*
+ * Dark is still the system preference by default. `data-theme` on <html> is the
+ * override the `theme` command in /cli sets — the two blocks below are the same
+ * palette, one for each way of asking for it.
+ */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --background: #0a0a0a;
         --foreground: #ededed;
         --surface: #0c0c0e;
@@ -27,7 +48,23 @@
         --faint: #3f3f46;
         --accent: #9d4cfa;
         --signal: #84cc16;
+        color-scheme: dark;
     }
+}
+
+:root[data-theme="dark"] {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --surface: #0c0c0e;
+    --line: #27272a;
+    --hairline: #1a1a1d;
+    --muted: #a1a1aa;
+    --subtle: #71717a;
+    --dim: #52525b;
+    --faint: #3f3f46;
+    --accent: #9d4cfa;
+    --signal: #84cc16;
+    color-scheme: dark;
 }
 
 @theme inline {

@@ -1,25 +1,12 @@
 import { Section } from "./section"
-
-/**
- * Placeholder seeded from the About copy — swap these for what you actually
- * want the site to say you're into.
- */
-const interests = [
-    "Artificial intelligence",
-    "Business intelligence",
-    "Algorithms & data structures",
-    "Mobile development",
-    "Desktop development",
-    "Game development",
-    "Import & logistics tooling",
-    "Learning in public",
-]
+import { interests } from "@/data/interests"
 
 export function Interests() {
     return (
         <Section id="interests" label="interests">
             <p className="max-w-[520px] text-[15.5px] leading-[1.68] text-foreground/85 text-pretty">
-                Things I keep circling back to, in and out of work.
+                Areas the work keeps returning to, inside client projects
+                and outside them.
             </p>
             <ul className="flex flex-wrap gap-2 mt-5">
                 {interests.map((interest) => (

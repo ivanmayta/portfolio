@@ -6,9 +6,9 @@ export default function NotFound() {
             <p className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-subtle">
                 404
             </p>
-            <h2 className="font-serif text-[36px] leading-[1.08] tracking-[-0.015em]">
+            <h1 className="text-[27px] sm:text-[32px] font-medium leading-[1.15] tracking-[-0.02em]">
                 Nothing here.
-            </h2>
+            </h1>
             <p className="max-w-[380px] text-[15.5px] leading-[1.62] text-muted text-pretty">
                 This page doesn&apos;t exist — or it did, and the link outlived
                 it.

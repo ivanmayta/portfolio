@@ -33,7 +33,7 @@ export default async function ProjectPage({
     const project = projects.find((p) => p.slug === slug)
     if (!project) notFound()
 
-    const { name, description, type, url, highlights, images } = project
+    const { name, description, type, isActive, url, highlights, images } = project
 
     return (
         <>
@@ -53,21 +53,22 @@ export default async function ProjectPage({
             </nav>
 
             <section className="pb-9">
-                <h2 className="font-serif text-[34px] sm:text-[44px] leading-[1.08] tracking-[-0.015em] text-pretty">
-                    {name}
-                </h2>
-                <p className="mt-5 max-w-[540px] text-base leading-[1.62] text-muted text-pretty">
+                <div className="flex items-baseline justify-between gap-x-6 gap-y-2 flex-wrap">
+                    <h1 className="text-[27px] sm:text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-pretty">
+                        {name}
+                    </h1>
+                    <p className="flex items-center gap-3.5 font-mono text-[10.5px] uppercase tracking-[0.08em] text-subtle">
+                        <span>{type}</span>
+                        <span aria-hidden className="block w-px h-[11px] bg-line" />
+                        <span>{isActive ? "live" : "archived"}</span>
+                    </p>
+                </div>
+                <p className="mt-4 max-w-[540px] text-base leading-[1.62] text-muted text-pretty">
                     {description}
                 </p>
             </section>
 
             <dl className="flex flex-col gap-4 py-8 border-t border-hairline">
-                <div className="grid grid-cols-1 sm:grid-cols-[96px_minmax(0,1fr)] gap-1 sm:gap-5 sm:items-baseline">
-                    <dt className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-faint">
-                        Platform
-                    </dt>
-                    <dd className="font-mono text-[12.5px] text-muted">{type}</dd>
-                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-[96px_minmax(0,1fr)] gap-1 sm:gap-5 sm:items-baseline">
                     <dt className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-faint">
                         Stack

@@ -20,9 +20,9 @@ export async function PostsPreview() {
             }
         >
             <p className="max-w-[520px] text-[15.5px] leading-[1.68] text-foreground/85 text-pretty">
-                Study write-ups from the courses I work through. One post per
-                lesson, grouped by course and topic, rebuilt with the diagrams
-                I wish the lesson had come with.
+                Study write-ups from the courses behind the work. One post
+                per lesson, grouped by course and topic, rebuilt with the
+                diagrams the original should have come with.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-6">

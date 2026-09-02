@@ -68,9 +68,9 @@ export default async function LessonPage({
 
             <article className="max-w-[640px]">
                 <header className="pb-2">
-                    <h2 className="font-serif text-[34px] sm:text-[42px] leading-[1.1] tracking-[-0.015em] text-pretty">
+                    <h1 className="font-serif text-[34px] sm:text-[42px] leading-[1.1] tracking-[-0.015em] text-pretty">
                         {meta.title}
-                    </h2>
+                    </h1>
                     <div className="flex items-center gap-3 flex-wrap mt-5 font-mono text-[10.5px] uppercase tracking-[0.08em] text-dim">
                         <span>{course.teacher}</span>
                         <span className="block w-px h-2.5 bg-line" />

@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
+import { PageHeader } from "@/components/page-header"
 import { Projects } from "@/components/projects"
 import { Technologies } from "@/components/technologies"
+import { projects } from "@/data/projects"
 
 export const metadata: Metadata = {
     title: "Projects | iverse.dev",
@@ -9,21 +11,19 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectsPage() {
+    const live = projects.filter((project) => project.isActive).length
+
     return (
         <>
-            <section className="pt-[76px] pb-2">
-                <p className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-subtle">
-                    / projects
-                </p>
-                <h2 className="mt-6 font-serif text-[36px] sm:text-[46px] leading-[1.08] tracking-[-0.015em] max-w-[560px] text-pretty">
-                    Ten things I <em className="text-accent">shipped</em>, and
-                    what they cost.
-                </h2>
-                <p className="mt-5 max-w-[520px] text-base leading-[1.62] text-muted text-pretty">
-                    Import logistics, ad reporting, landing pages, one
-                    videogame and one data warehouse.
-                </p>
-            </section>
+            <PageHeader
+                label="projects"
+                title="Projects"
+                stats={[
+                    `${projects.length} projects`,
+                    live === projects.length ? "all live" : `${live} live`,
+                ]}
+                className="pb-2"
+            />
             <Projects />
             <Technologies />
         </>

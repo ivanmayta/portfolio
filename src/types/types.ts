@@ -3,6 +3,8 @@ import { LucideIcon } from "lucide-react"
 export type Project = {
     name: string
     slug: string
+    /** Year it shipped — groups the index. Undated projects sort last. */
+    year?: number
     type: "web" | "mobile" | "bi" | "videogame"
     isActive: boolean
     description: string
